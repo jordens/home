@@ -6,6 +6,9 @@
 *.pyc
 *.pyo
 
+.svn
+.bzr
+
 *.vcd
 
 *.class

@@ -46,6 +46,7 @@
 /.ssh
 /.ssl
 /.thumbnails
+/.tmux-session
 /.gstreamer-*
 /.tox
 /.vim/bundle
@@ -71,3 +72,4 @@
 /work
 /data
 /tmp
+/scratch
