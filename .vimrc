@@ -38,13 +38,14 @@ set pastetoggle=<f12>
 set whichwrap=<,>,h,l,[,]
 set noerrorbells
 set magic
-set modeline
-set modelines=3
 set history=10000
 set cursorline
 set shell=bash
 set switchbuf=useopen
 set scrolloff=3
+
+set modeline
+set modelines=3
 
 set foldmethod=manual
 set nofoldenable
@@ -54,6 +55,9 @@ set nobackup
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+set splitbelow
+set splitright
 
 set t_Co=256 " 256 colors
 set background=dark
