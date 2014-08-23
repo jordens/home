@@ -86,3 +86,5 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 command! GdiffInTab tabedit %|vsplit|Gdiff
 nnoremap <leader>d :GdiffInTab<cr>
 nnoremap <leader>D :tabclose<cr>
+
+let python_highlight_all=1
