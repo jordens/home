@@ -1,6 +1,5 @@
 /.Xauthority
 /.ICEauthority
-/.account
 /.bash_history
 /.bazaar
 /.bzr.log
@@ -23,8 +22,7 @@
 /.gconf
 /.ipython
 /.java
-/.kicad
-/.kicad_common
+/.kicad*
 /.lesshst
 /.local
 /.macromedia
@@ -39,7 +37,6 @@
 /.pam_environment
 /.pip
 /.pypirc
-/.pymt
 /.pki
 /.python_history
 /.sqlite_history
@@ -52,7 +49,6 @@
 /.vim/bundle
 /.vim-tmp
 /.viminfo
-/.viper
 /.vim/.netrwhist
 /.xsession-errors*
 /.wine
