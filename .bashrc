@@ -30,11 +30,12 @@ export GREP_OPTIONS="--color=auto"
 
 . ~/bin/bash_aliases.sh
 . ~/bin/bash_colors.sh
-. ~/bin/git-completion.bash
+. ~/bin/git-completion.sh
+. ~/bin/git-prompt.sh
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1="\[$BRIGHT_GREEN\]\u@\h\[$RESET\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]$(__git_ps1 " (%s)")\[$RESET\]\\$ "
+PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
