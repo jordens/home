@@ -1,0 +1,39 @@
+[general]
+pythonfile = ~/.offlineimap.py
+accounts = gmail
+maxsyncaccounts = 3
+maxsize = 50000000
+maxage = 20000
+socktimeout = 60
+
+[Account gmail]
+localrepository = local
+remoterepository = gmail
+status_backend = sqlite
+
+[Repository local]
+type = Maildir
+localfolders = ~/Mail/gmail
+
+[Repository gmail]
+type = Gmail
+remoteuser = jordens@gmail.com
+remotepass = get_gmail_pass()
+cert_fingerprint = 89091347184d41768bfc0da9fad94bfe882dd358
+maxconnections = 1
+# Setting realdelete = yes will Really Delete email from the server.
+# Otherwise "deleting" a message will just remove any labels and 
+# retain the message in the All Mail folder.
+realdelete = no
+folderfilter = lambda foldername: not re.search(
+	'(^qoethzch|^physethzch|^daemon|^debian|^systems)',
+	foldername)
+nametrans = lambda folder: (
+    re.sub('.*Spam$', 'spam',
+    re.sub('.*Drafts$', 'drafts',
+    re.sub('.*Sent Mail$', 'sent',
+    re.sub('.*Starred$', 'flagged',
+    re.sub('.*Important$', 'important',
+    re.sub('.*Trash$', 'trash',
+    re.sub('.*All Mail$', 'archive', folder,
+    ))))))))

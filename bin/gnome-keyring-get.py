@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+from gi.repository import GObject, GnomeKeyring
+
+def gnome_keyring_get(**attrs):
+    result, kr = GnomeKeyring.get_default_keyring_sync()
+    assert result == GnomeKeyring.Result.OK
+    attr = GnomeKeyring.Attribute.list_new()
+    for k, v in attrs.items():
+        GnomeKeyring.Attribute.list_append_string(attr, k, v)
+    result, keys = GnomeKeyring.find_items_sync(
+            GnomeKeyring.ItemType.GENERIC_SECRET, attr)
+    assert result == GnomeKeyring.Result.OK
+    for key in keys:
+        result, info = GnomeKeyring.item_get_info_sync(kr, key.item_id)
+        assert result == GnomeKeyring.Result.OK
+        yield info.get_display_name(), key.secret #, key.attributes
+
+if __name__ == "__main__":
+    import sys
+    attrs = {}
+    for l in sys.argv[1:]:
+        k, v = l.split("=", 1)
+        attrs[k] = v
+    for n, s in gnome_keyring_get(**attrs):
+        print n, s
