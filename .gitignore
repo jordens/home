@@ -24,16 +24,14 @@
 *.zip
 
 *.log
-*.sql
 *.sqlite
 
 .DS_Store
 .DS_Store?
 ._*
-/.Spotlight-V100
-/.Trashes
-/.Trash
-ehthumbs.db
+.Spotlight-V100
+.Trashes
+.Trash
 Thumbs.db
 /.Xauthority
 /.ICEauthority
@@ -58,14 +56,12 @@ Thumbs.db
 /.gnupg
 /.gnome
 /.gconf
-/.history
 /.ipython
 /.java
 /.kicad
 /.kicad_common
 /.lesshst
 /.local
-/.localized
 /.macromedia
 /.mozilla
 /.mutt/aliases
@@ -74,14 +70,12 @@ Thumbs.db
 /.mplayer
 /.mysql_history
 /.netrc
-/.npm
 /.offlineimap
 /.pam_environment
 /.pip
 /.pypirc
 /.pymt
 /.pki
-/.python-eggs
 /.python_history
 /.sqlite_history
 /.ssh
@@ -89,12 +83,9 @@ Thumbs.db
 /.thumbnails
 /.gstreamer-*
 /.tox
-/.trc
 /.vim/bundle
 /.vim-tmp
-/.vim/.netrwhist
 /.viminfo
-/.vimprojects
 /.viper
 /.xsession-errors*
 /.wine

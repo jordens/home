@@ -11,8 +11,13 @@ shopt -s histappend
 
 shopt -s checkwinsize
 
-export PATH=${PATH}:/usr/local/bin
-export PATH="~/bin:$PATH"
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+pathadd /usr/local/bin
+pathadd ~/bin
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
