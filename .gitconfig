@@ -14,16 +14,28 @@
 [merge]
     tool = vimdiff
 [alias]
-    unstage = reset HEAD
     log1 = log --pretty=oneline --decorate
-    up = pull origin
-    pr = pull --rebase
-    st = status
-    di = diff
-    ds = diff --stat
-    ci = commit
     co = checkout
     br = branch
+    st = status
+    di = diff
+#    ds = diff --stat
+    ds = diff --stat=160,120
+    dc = diff --cached
+    dh1 = diff HEAD~1
+    aa = add --all
+    unstage = reset HEAD
+    ci = commit --verbose
+    amend = commit --amend
+    uncommit = reset --soft HEAD~
+    pom = push origin master
+    fa = fetch --all
+    up = pull origin
+    pr = pull --rebase
+    pullff = pull --ff-only
+    ff = merge --ff-only
+    noff = merge --no-ff
+
 [push]
     default = simple
 [rerere]
