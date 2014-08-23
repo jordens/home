@@ -45,6 +45,7 @@ set cursorline
 set shell=bash
 set switchbuf=useopen
 set scrolloff=3
+
 set foldmethod=manual
 set nofoldenable
 set nojoinspaces
@@ -77,18 +78,11 @@ nmap <silent> <Up> gk
 
 let mapleader=","
 map <leader>y "*y
+map <leader>p "*p
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-" Align selected lines
-vnoremap <leader>ib :!align<cr>
-
-command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
-
-command! GdiffInTab tabedit %|vsplit|Gdiff
-nnoremap <leader>d :GdiffInTab<cr>
-nnoremap <leader>D :tabclose<cr>
 
 let python_highlight_all=1
