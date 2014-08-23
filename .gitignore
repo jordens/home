@@ -52,6 +52,7 @@
 /.vim-tmp
 /.viminfo
 /.viper
+/.vim/.netrwhist
 /.xsession-errors*
 /.wine
 /.wireshark
