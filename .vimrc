@@ -1,6 +1,8 @@
-" Referenced here: http://vimuniversity.com/samples/your-first-vimrc-should-be-nearly-empty
-"
+" vim:set ts=2 sts=2 sw=2 expandtab:
+
 set nocompatible
+
+"autocmd!
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,7 +21,7 @@ Plugin 'jmcantrell/vim-virtualenv'
 "Plugin 'mattn/emmet-vim'
 call vundle#end()
 
-set number
+"set number
 set hidden
 set mouse=a
 set autowrite
@@ -33,13 +35,32 @@ set whichwrap=<,>,h,l,[,]
 set noerrorbells
 set magic
 set modeline
+set modelines=3
+set history=10000
+set cursorline
+set shell=bash
+set switchbuf=useopen
+set scrolloff=3
+set foldmethod=manual
+set nofoldenable
+set nojoinspaces
 
+set nobackup
+set nowritebackup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+set t_Co=256 " 256 colors
+set background=dark
+"color grb256
 let g:solarized_termcolors=&t_Co
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 let g:solarized_termtrans=1
 colorscheme solarized
-set background=dark
+
+"syn match Braces display '[{}()\[\]]'
+"hi Braces ctermfg=red
 
 let g:syntastic_quiet_messages = { "type": "style",
 				\  "level": "warnings" }
@@ -50,5 +71,18 @@ imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
-"syn match Braces display '[{}()\[\]]'
-"hi Braces ctermfg=red
+let mapleader=","
+map <leader>y "*y
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+" Align selected lines
+vnoremap <leader>ib :!align<cr>
+
+command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
+
+command! GdiffInTab tabedit %|vsplit|Gdiff
+nnoremap <leader>d :GdiffInTab<cr>
+nnoremap <leader>D :tabclose<cr>
