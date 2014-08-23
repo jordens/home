@@ -1,0 +1,32 @@
+# vim:set ts=4 sts=4 sw=4 expandtab:
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+[user]
+    name = Robert Jordens
+    email = jordens@gmail.com
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[merge]
+    tool = vimdiff
+[alias]
+    unstage = reset HEAD
+    log1 = log --pretty=oneline --decorate
+    up = pull origin
+    pr = pull --rebase
+    st = status
+    di = diff
+    ds = diff --stat
+    ci = commit
+    co = checkout
+    br = branch
+[push]
+    default = simple
+[rerere]
+    enabled = true
+[include]
+    path = ~/.gitconfig.local
