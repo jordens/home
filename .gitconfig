@@ -10,7 +10,7 @@
     email = jordens@gmail.com
 [core]
     editor = vim
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore.global
 [merge]
     tool = vimdiff
 [alias]
