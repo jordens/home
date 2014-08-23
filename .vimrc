@@ -20,8 +20,8 @@ Plugin 'ervandew/supertab'
 Plugin 'ervandew/snipmate.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'kien/ctrlp.vim'
 "Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'kien/ctrlp.vim'
 "Plugin 'mattn/emmet-vim'
 call vundle#end()
 
