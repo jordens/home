@@ -4,7 +4,7 @@ set nocompatible
 
 "autocmd!
 
-if filereadable(expand('~/.vim/bundle/Vundle.vim'))
+if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
   filetype off
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
