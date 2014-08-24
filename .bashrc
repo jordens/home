@@ -4,7 +4,11 @@ case $- in
       *) return;;
 esac
 
-export TERM="xterm-256color"
+case "$TERM" in
+    xterm*)
+        export TERM="xterm-256color"
+    ;;
+esac
 
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -19,7 +23,17 @@ if which tmux >/dev/null 2>&1; then
     if [ -z "$TMUX" ]; then # could exec here
         tmux attach-session || tmux new-session
     else
-        TERM="screen-256color"
+        case "$TERM" in
+            xterm-256color)
+                export TERM="screen-256color"
+            ;;
+            xterm-color)
+                export TERM="screen-color"
+            ;;
+            *)
+                export TERM="screen"
+            ;;
+        esac
     fi
 fi
 
@@ -64,3 +78,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# vim: et ts=4 sw=4
