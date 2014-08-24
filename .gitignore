@@ -20,7 +20,8 @@
 /.gitconfig.local
 /.gksu.lock
 /.gnome
-/.gnupg
+/.gnupg/*
+!/.gnupg/gpg.conf
 /.gstreamer-*
 /.ICEauthority
 /.icons
