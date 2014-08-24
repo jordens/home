@@ -1,0 +1,67 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.oftc.net";
+    chatnet = "oftc";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.ethz.ch";
+    chatnet = "ethz";
+    port = "6668";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  freenode = { type = "IRC"; };
+  oftc = { type = "IRC"; };
+  ethz = { type = "IRC"; };
+};
+
+channels = (
+);
+
+aliases = {
+};
+
+settings = {
+  core = { real_name = "Robert Jordens"; user_name = "rj"; nick = "rjo"; };
+  "fe-text" = {
+    autostick_split_windows = "yes";
+    scrollback_time = "= 1day";
+    actlist_sort = "refnum";
+  };
+  "fe-common/core" = {
+    autolog_path = "~/.irclogs/$chatnet/$0.log";
+    autolog_level = "all -crap -clientcrap -ctcps";
+    autolog = "yes";
+    hilight_nick_matches = "yes";
+    bell_beeps = "yes";
+    beep_msg_level = "HILIGHT MSGS  ";
+    autocreate_own_query = "yes";
+    autocreate_query_level = "MSGS DCCMSGS ";
+    emphasis = "yes";
+    max_command_history = "100";
+  };
+  "irc/core" = { alternate_nick = "rjo_"; };
+};
+ignores = (
+  {
+    level = "JOINS PARTS QUITS NICKS";
+    channels = ( "#debian", "#debian-devel" );
+  }
+);
+logs = { };

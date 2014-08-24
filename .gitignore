@@ -24,6 +24,7 @@
 /.gconf
 /.ipython
 /.icons
+/.irclogs
 /.java
 /.kicad*
 /.lesshst
@@ -73,3 +74,4 @@
 /tmp
 /scratch
 /public_html
+/src
