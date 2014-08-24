@@ -4,6 +4,25 @@ case $- in
       *) return;;
 esac
 
+export TERM="xterm-256color"
+
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+pathadd /usr/local/bin
+pathadd ~/bin
+
+if which tmux >/dev/null 2>&1; then
+    if [ -z "$TMUX" ]; then # could exec here
+        tmux attach-session || tmux new-session
+    else
+        TERM="screen-256color"
+    fi
+fi
+
 HISTCONTROL=ignorespace:ignoredups:erasedups
 HISTSIZE=10000
 HISTFILESIZE=10000
@@ -11,17 +30,7 @@ shopt -s histappend
 
 shopt -s checkwinsize
 
-pathadd() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
-    fi
-}
-pathadd /usr/local/bin
-pathadd ~/bin
-
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-export TERM="screen-256color"
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
