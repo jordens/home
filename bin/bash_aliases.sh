@@ -6,12 +6,12 @@ function lsl() {
     ls --color=always "$@" | less -R
 }
 
-alias ls='ls -G --color=auto'
-alias ll='ls -alFG --color=auto'
-alias la='ls -AG --color=auto'
-alias l='ls -CFG --color=auto'
-alias lll='lsl -alFG'
-alias lal='lsl -AG'
+alias ls='ls --color=auto'
+alias ll='ls -alF --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
+alias lll='lsl -alF'
+alias lal='lsl -A'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
