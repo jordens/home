@@ -41,6 +41,7 @@
 /.pam_environment
 /.pip
 /.pypirc
+/.pyzor
 /.pki
 /.python_history
 /.sqlite_history
