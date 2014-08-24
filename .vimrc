@@ -43,13 +43,11 @@ set cursorline
 set shell=bash
 set switchbuf=useopen
 set scrolloff=3
-
 set modeline
-set modelines=3
+set nojoinspaces
 
 set foldmethod=manual
 set nofoldenable
-set nojoinspaces
 
 set nobackup
 set nowritebackup
@@ -58,6 +56,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 set splitbelow
 set splitright
+
+set diffopt+=vertical
 
 set t_Co=256 " 256 colors
 set background=dark
