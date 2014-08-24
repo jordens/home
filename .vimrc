@@ -36,7 +36,10 @@ set linebreak
 set wrap
 set textwidth=79
 set wrapmargin=2
-set formatoptions+=tcroqbj
+set formatoptions+=tcroqb
+if v:version + has("patch541") >= 704
+  set formatoptions+=j
+endif
 set pastetoggle=<f12>
 set shiftround
 set showmatch
