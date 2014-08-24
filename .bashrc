@@ -37,6 +37,17 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
 
+export DEBNAME="Robert Jordens"
+export DEBFULLNAME="Robert Jordens"
+export DEBEMAIL="jordens@debian.org"
+export IRCNICK=rjo
+export EMAIL=jordens@gmail.com
+export DEBSIGN_KEYID=E02FEF11
+export REPORTBUGEMAIL=jordens@gmail.com
+
+export EDITOR=vim
+export PAGER=less
+
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
