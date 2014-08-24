@@ -21,7 +21,6 @@
 /.gksu.lock
 /.gnome
 /.gnupg/*
-!/.gnupg/gpg.conf
 /.gstreamer-*
 /.ICEauthority
 /.icons
@@ -46,8 +45,9 @@
 /.pypirc
 /.python_history
 /.pyzor
+/.ropeproject
 /.sqlite_history
-/.ssh
+/.ssh/*
 /.ssl
 /.thumbnails
 /.tmux-session
@@ -61,6 +61,9 @@
 /.Xilinx
 /.xinputrc
 /.xsession-errors*
+
+!/.ssh/config.global
+!/.gnupg/gpg.conf
 
 /Desktop
 /Documents
