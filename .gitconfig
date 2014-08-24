@@ -36,9 +36,9 @@
     ff = merge --ff-only
     noff = merge --no-ff
 
-[push]
-    default = simple
-[rerere]
-    enabled = true
+#[push]
+#    default = simple
+#[rerere]
+#    enabled = true
 [include]
     path = ~/.gitconfig.local
