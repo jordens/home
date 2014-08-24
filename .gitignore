@@ -1,3 +1,5 @@
+/.AppleDesktop
+/.AppleDouble
 /.Xauthority
 /.ICEauthority
 /.bash_history
@@ -21,6 +23,7 @@
 /.gnome
 /.gconf
 /.ipython
+/.icons
 /.java
 /.kicad*
 /.lesshst
@@ -48,7 +51,7 @@
 /.tox
 /.vim/bundle
 /.vim-tmp
-/.viminfo
+/.viminf*
 /.vim/.netrwhist
 /.xsession-errors*
 /.wine
