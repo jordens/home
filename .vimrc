@@ -4,28 +4,30 @@ set nocompatible
 
 "autocmd!
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-dispatch'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'ervandew/supertab'
-Plugin 'ervandew/snipmate.vim'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'kien/ctrlp.vim'
-Plugin 'davidhalter/jedi-vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'mattn/emmet-vim'
-"Plugin 'klen/python-mode'
-call vundle#end()
+if filereadable(expand('~/.vim/bundle/Vundle.vim'))
+  filetype off
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'tpope/vim-sensible'
+    Plugin 'tpope/vim-eunuch'
+    Plugin 'tpope/vim-unimpaired'
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-dispatch'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'bling/vim-airline'
+    Plugin 'ervandew/supertab'
+    Plugin 'ervandew/snipmate.vim'
+    "Plugin 'scrooloose/syntastic'
+    "Plugin 'jmcantrell/vim-virtualenv'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'davidhalter/jedi-vim'
+    "Plugin 'Lokaltog/vim-easymotion'
+    "Plugin 'mattn/emmet-vim'
+    "Plugin 'klen/python-mode'
+  call vundle#end()
+endif
 
 "set number
 set hidden
@@ -74,14 +76,15 @@ set splitright
 
 set diffopt+=vertical
 
-"set t_Co=256 " 256 colors
-set background=dark
-"color grb256
-let g:solarized_termcolors=&t_Co
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-let g:solarized_termtrans=1
-colorscheme solarized
+if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+  "set t_Co=256 " 256 colors
+  set background=dark
+  let g:solarized_termcolors=&t_Co
+  "let g:solarized_contrast="high"
+  "let g:solarized_visibility="high"
+  let g:solarized_termtrans=1
+  colorscheme solarized
+endif
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
