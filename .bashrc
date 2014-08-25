@@ -25,10 +25,10 @@ if which tmux >/dev/null 2>&1; then
         else
             _tmux_type=local
         fi
-        if tmux has-session -t $_tmux_type; then # no -A in old tmux
-            exec tmux attach-session -P -s $_tmux_type
+        if tmux has-session -t $_tmux_type; then # no -PA in old tmux
+            exec tmux attach-session -t $_tmux_type
         else
-            exec tmux new-session -P -s $_tmux_type
+            exec tmux new-session -s $_tmux_type
         fi
     fi
 fi
