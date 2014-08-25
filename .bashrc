@@ -46,7 +46,7 @@ export GREP_OPTIONS="--color=auto"
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
+PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$NORMAL\]\\$ "
 
 export DEBNAME="Robert Jordens"
 export DEBFULLNAME="Robert Jordens"
