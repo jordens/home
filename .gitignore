@@ -18,6 +18,7 @@
 /.gconf
 /.gdb_history
 /.gitconfig.local
+/.gimp-*
 /.gksu.lock
 /.gnome
 /.gnupg/*
