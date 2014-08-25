@@ -20,11 +20,12 @@ pathadd ~/bin
 
 if which tmux >/dev/null 2>&1; then
     if [ -z "$TMUX" ]; then
-        if tmux has-session ; then
-            exec tmux attach-session
+        if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+            _tmux_type=remote
         else
-            exec tmux new-session
+            _tmux_type=local
         fi
+        exec tmux new-session -AP -s $_tmux_type
     fi
 fi
 
