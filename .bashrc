@@ -44,7 +44,9 @@ export GREP_OPTIONS="--color=auto"
 . ~/bin/git-completion.sh
 . ~/bin/git-prompt.sh
 
-export GIT_PS1_SHOWDIRTYSTATE=1
+#export GIT_PS1_SHOWDIRTYSTATE=1
+#export GIT_PS1_SHOWUNTRACKEDFILES=1
+#export GIT_PS1_SHOWSTASHSTATE=1
 
 PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
 
