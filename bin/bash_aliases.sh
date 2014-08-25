@@ -7,10 +7,10 @@ function lsl() {
 }
 
 alias ls='ls --color=auto'
-alias ll='ls -alF --color=auto'
+alias ll='ls -halF --color=auto'
 alias la='ls -A --color=auto'
-alias l='ls -CF --color=auto'
-alias lll='lsl -alF'
+alias l='ls -F --color=auto'
+alias lll='lsl -halF'
 alias lal='lsl -A'
 
 # Add an "alert" alias for long running commands.  Use like so:
