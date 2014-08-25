@@ -16,12 +16,15 @@ pathadd() {
     fi
 }
 
-pathadd /usr/local/bin
 pathadd ~/bin
 
 if which tmux >/dev/null 2>&1; then
-    if [ -z "$TMUX" ]; then # could exec here
-        tmux attach-session || tmux new-session
+    if [ -z "$TMUX" ]; then
+        if tmux has-session ; then
+            exec tmux attach-session
+        else
+            exec tmux new-session
+        fi
     fi
 fi
 
