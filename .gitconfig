@@ -16,6 +16,8 @@
     summary = true
 [alias]
     log1 = log --pretty=oneline --decorate
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     co = checkout
     br = branch
     st = status
