@@ -23,8 +23,8 @@
 /.eaglerc
 /.ec2
 /.eeschema
-/.enthought
 /.electrum
+/.enthought
 /.flexlmrc
 /.fontconfig
 /.fonts
@@ -32,6 +32,7 @@
 /.freerdp
 /.FrontDesign
 /.FrontPanel
+/.gconf
 /.gdb_history
 /.gEDA
 /.gerbview
@@ -132,6 +133,7 @@
 /Pictures
 /Public
 /Templates
+/Videos
 /public_html
 
 /work/*
