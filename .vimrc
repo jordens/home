@@ -108,6 +108,29 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<cr>
+nnoremap <M-1> :buffer 1<cr>
+nnoremap 1 :buffer 1<cr>
+nnoremap <M-2> :buffer 2<cr>
+nnoremap 2 :buffer 2<cr>
+nnoremap <M-3> :buffer 3<cr>
+nnoremap 3 :buffer 3<cr>
+nnoremap <M-4> :buffer 4<cr>
+nnoremap 4 :buffer 4<cr>
+nnoremap <M-5> :buffer 5<cr>
+nnoremap 5 :buffer 5<cr>
+nnoremap <M-6> :buffer 6<cr>
+nnoremap 6 :buffer 6<cr>
+nnoremap <M-7> :buffer 7<cr>
+nnoremap 7 :buffer 7<cr>
+nnoremap <M-8> :buffer 8<cr>
+nnoremap 8 :buffer 8<cr>
+nnoremap <M-9> :buffer 9<cr>
+nnoremap 9 :buffer 9<cr>
+nnoremap <M-0> :buffer 10<cr>
+nnoremap 0 :buffer 10<cr>
+
 map  <F1>   <Esc>
 map! <F1>   <Esc>
 nmap <silent> <F6> :if &previewwindow<Bar>pclose<Bar>elseif exists(':Gstatus')<Bar>exe 'Gstatus'<Bar>else<Bar>ls<Bar>endif<CR>
@@ -119,6 +142,8 @@ map <F10>   :Start<CR>
 map <Leader>v  :so ~/.vimrc<CR>
 
 let python_highlight_all=1
+
+let g:airline#extensions#tabline#enabled = 1
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
