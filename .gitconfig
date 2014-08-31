@@ -16,8 +16,8 @@
 #   enabled = true
 [github]
     user = jordens
-[init]
-    templatedir = ~/.git_template
+#[init]
+#    templatedir = ~/.git_template
 [interactive]
     singlekey = true
 [rebase]
