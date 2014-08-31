@@ -20,6 +20,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'ervandew/supertab'
     Plugin 'ervandew/snipmate.vim'
     Plugin 'scrooloose/syntastic'
+    "Plugin 'airblade/vim-gitgutter'
     "Plugin 'jmcantrell/vim-virtualenv'
     "Plugin 'kien/ctrlp.vim'
     "Plugin 'davidhalter/jedi-vim'
