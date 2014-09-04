@@ -68,6 +68,7 @@ export EMAIL=jordens@gmail.com
 
 export EDITOR=vim
 export PAGER=less
+export LESS="--quit-if-one-screen --RAW-CONTROL-CHARS"
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
