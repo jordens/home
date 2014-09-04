@@ -15,6 +15,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-dispatch'
+    Plugin 'tpope/vim-sleuth'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'bling/vim-airline'
     Plugin 'ervandew/supertab'
@@ -57,6 +58,7 @@ set switchbuf=useopen
 set scrolloff=3
 set modeline
 set nojoinspaces
+"set tabstop=4
 
 set foldmethod=manual
 set nofoldenable
