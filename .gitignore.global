@@ -27,13 +27,13 @@
 *.tar
 *.zip
 *.bz2
+*.z
 
 *.log
 *.sqlite
 
 .DS_Store
 .DS_Store?
-._*
 .Spotlight-V100
 .Trashes
 .Trash

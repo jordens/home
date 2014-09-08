@@ -118,6 +118,7 @@
 /.vim/.netrwhist
 /.virt-manager
 /.VirtualBox
+/.w3m
 /.wine
 /.wireshark
 /.Xauthority*
@@ -125,6 +126,7 @@
 /.xinputrc
 /.xsession-errors*
 /*.kicad_pcb.lock
+/*.lock
 
 /.ssh/*
 !/.ssh/config.global
