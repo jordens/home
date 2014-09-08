@@ -31,11 +31,9 @@ chatnets = {
   ethz = { type = "IRC"; };
 };
 
-channels = (
-);
+channels = ( );
 
-aliases = {
-};
+aliases = { };
 
 settings = {
   core = { real_name = "Robert Jordens"; user_name = "rj"; nick = "rjo"; };
@@ -65,3 +63,19 @@ ignores = (
   }
 );
 logs = { };
+statusbar = {
+  default = {
+    window = {
+      items = {
+        barstart = { priority = "100"; };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
