@@ -26,6 +26,7 @@
 /.eeschema
 /.electrum
 /.enthought
+/.esd_auth
 /.flexlmrc
 /.fontconfig
 /.fonts
@@ -88,6 +89,7 @@
 /.pcb
 /.pcbnew
 /pcbnew-*
+/_autosave*.kicad*
 /.pip
 /.pki
 /.pulse
