@@ -130,6 +130,8 @@
 /.xsession-errors*
 /*.kicad_pcb.lock
 /*.lock
+/.bitcoin
+/.synaptic
 
 /.ssh/*
 !/.ssh/config.global
