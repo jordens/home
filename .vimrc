@@ -16,6 +16,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-dispatch'
     Plugin 'tpope/vim-sleuth'
+    Plugin 'tpope/vim-commentary'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'bling/vim-airline'
     Plugin 'ervandew/supertab'
