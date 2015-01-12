@@ -17,6 +17,7 @@ pathadd() {
 }
 
 pathadd ~/bin
+pathadd ~/.local/bin
 
 if which tmux >/dev/null 2>&1; then
     if [ -z "$TMUX" ]; then
