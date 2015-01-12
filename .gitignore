@@ -66,6 +66,7 @@
 /.kicad*
 /kicad-*
 /.klayout*
+/.kismet
 /.launchpadlib
 /.lesshst
 /.libao
@@ -86,6 +87,7 @@
 /.nv
 /.nvidia-settings-rc
 /.offlineimap
+/.openshot
 /.pam_environment
 /.pcb
 /.pcbnew
