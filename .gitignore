@@ -67,6 +67,7 @@
 /kicad-*
 /.klayout*
 /.kismet
+/.keybase-installer
 /.launchpadlib
 /.lesshst
 /.libao
@@ -84,6 +85,7 @@
 /.mysql_history
 /.nemiver
 /.netrc
+/.npm
 /.nv
 /.nvidia-settings-rc
 /.offlineimap
