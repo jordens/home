@@ -19,6 +19,7 @@
 /.config
 /.cups
 /.cvpcb
+/.dbus
 /.dia
 /.dmrc
 /.eagle
@@ -131,6 +132,8 @@
 /.Xauthority*
 /.Xilinx
 /.xinputrc
+/.xbmc
+/.xscreensaver
 /.xsession-errors*
 /*.kicad_pcb.lock
 /*.lock
