@@ -84,7 +84,7 @@ if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"
   "set t_Co=256 " 256 colors
   set background=dark
   let g:solarized_termcolors=&t_Co
-  "let g:solarized_contrast="high"
+  let g:solarized_contrast="high"
   "let g:solarized_visibility="high"
   let g:solarized_termtrans=1
   colorscheme solarized
