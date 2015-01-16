@@ -21,8 +21,8 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'bling/vim-airline'
     Plugin 'ervandew/supertab'
     Plugin 'scrooloose/syntastic'
+    Plugin 'airblade/vim-gitgutter'
     "Plugin 'ervandew/snipmate.vim'
-    "Plugin 'airblade/vim-gitgutter'
     "Plugin 'jmcantrell/vim-virtualenv'
     "Plugin 'kien/ctrlp.vim'
     "Plugin 'davidhalter/jedi-vim'
@@ -84,7 +84,7 @@ if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"
   "set t_Co=256 " 256 colors
   set background=dark
   let g:solarized_termcolors=&t_Co
-  "let g:solarized_contrast="high"
+  let g:solarized_contrast="high"
   "let g:solarized_visibility="high"
   let g:solarized_termtrans=1
   colorscheme solarized

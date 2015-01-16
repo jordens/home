@@ -19,6 +19,7 @@
 /.config
 /.cups
 /.cvpcb
+/.dbus
 /.dia
 /.dmrc
 /.eagle
@@ -65,6 +66,8 @@
 /.kicad*
 /kicad-*
 /.klayout*
+/.kismet
+/.keybase-installer
 /.launchpadlib
 /.lesshst
 /.libao
@@ -82,9 +85,11 @@
 /.mysql_history
 /.nemiver
 /.netrc
+/.npm
 /.nv
 /.nvidia-settings-rc
 /.offlineimap
+/.openshot
 /.pam_environment
 /.pcb
 /.pcbnew
@@ -126,6 +131,8 @@
 /.Xauthority*
 /.Xilinx
 /.xinputrc
+/.xbmc
+/.xscreensaver
 /.xsession-errors*
 /*.kicad_pcb.lock
 /*.lock
