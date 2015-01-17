@@ -10,6 +10,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
   call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
     Plugin 'tpope/vim-sensible'
+    Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-eunuch'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-surround'
@@ -18,6 +19,8 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-sleuth'
     Plugin 'tpope/vim-commentary'
     Plugin 'altercation/vim-colors-solarized'
+    "Plugin 'mileszs/ack.vim'
+    Plugin 'rking/ag.vim'
     Plugin 'bling/vim-airline'
     Plugin 'ervandew/supertab'
     Plugin 'scrooloose/syntastic'
@@ -45,6 +48,7 @@ set formatoptions+=tcroqb
 if v:version + has("patch541") >= 704
   set formatoptions+=j
 endif
+set encoding=utf-8
 set pastetoggle=<f12>
 set shiftround
 set showmatch
@@ -59,15 +63,15 @@ set switchbuf=useopen
 set scrolloff=3
 set modeline
 set nojoinspaces
-"set tabstop=4
 
 set foldmethod=manual
+set foldnestmax=3
 set nofoldenable
 
 set nobackup
 set nowritebackup
-set backupdir=~/.vim-tmp,~/tmp,/tmp,/tmp
-set directory=~/.vim-tmp,~/tmp,/tmp,/tmp
+set backupdir=~/.vim-tmp,~/tmp,/tmp
+set directory=~/.vim-tmp,~/tmp,/tmp
 
 if !empty($SUDO_USER) && $USER !=# $SUDO_USER
   set viminfo=
@@ -146,6 +150,11 @@ map <F10>   :Start<CR>
 map <Leader>v  :so ~/.vimrc<CR>
 
 let python_highlight_all=1
+
+" vim-gitgutter
+highlight clear SignColumn
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 let g:airline#extensions#tabline#enabled = 1
 
