@@ -70,8 +70,8 @@ set nofoldenable
 
 set nobackup
 set nowritebackup
-set backupdir=~/.vim-tmp,~/tmp,/tmp
-set directory=~/.vim-tmp,~/tmp,/tmp
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/tmp
 
 if !empty($SUDO_USER) && $USER !=# $SUDO_USER
   set viminfo=
