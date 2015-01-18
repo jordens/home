@@ -19,12 +19,12 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-sleuth'
     Plugin 'tpope/vim-commentary'
     Plugin 'altercation/vim-colors-solarized'
-    "Plugin 'mileszs/ack.vim'
     Plugin 'rking/ag.vim'
     Plugin 'bling/vim-airline'
     Plugin 'ervandew/supertab'
     Plugin 'scrooloose/syntastic'
     Plugin 'airblade/vim-gitgutter'
+    "Plugin 'mileszs/ack.vim'
     "Plugin 'ervandew/snipmate.vim'
     "Plugin 'jmcantrell/vim-virtualenv'
     "Plugin 'kien/ctrlp.vim'
@@ -36,6 +36,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
 endif
 
 "set number
+"set shell=/bin/bash
 set hidden
 set mouse=a
 set mousemodel=popup
@@ -86,19 +87,35 @@ set diffopt+=vertical
 
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
   "set t_Co=256 " 256 colors
-  set background=dark
+  if has('gui_running')
+    set background=light
+  else
+    set background=dark
+  endif
   let g:solarized_termcolors=&t_Co
   let g:solarized_contrast="high"
   "let g:solarized_visibility="high"
   let g:solarized_termtrans=1
   colorscheme solarized
+  highlight clear SignColumn
 endif
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
 
-let g:syntastic_quiet_messages = { "type": "style",
-				\  "level": "warnings" }
+"let g:syntastic_quiet_messages = {"level": "warnings", "type": "style"}
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_flake8_exec = 'python3'
+let g:syntastic_python_flake8_args = '-m flake8.run'
+let g:syntastic_python_checkers = ['python', 'flake8']
+
+let python_highlight_all=1
+
+" vim-gitgutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+let g:airline#extensions#tabline#enabled = 1
 
 " let cursors jump rows, not lines
 imap <silent> <Down> <C-o>gj
@@ -148,15 +165,6 @@ map <F9>    :Dispatch<CR>
 map <F10>   :Start<CR>
 
 map <Leader>v  :so ~/.vimrc<CR>
-
-let python_highlight_all=1
-
-" vim-gitgutter
-highlight clear SignColumn
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
-
-let g:airline#extensions#tabline#enabled = 1
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
