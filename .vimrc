@@ -71,8 +71,8 @@ set nofoldenable
 
 set nobackup
 set nowritebackup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/tmp
+set backupdir=~/.vim-tmp,~/tmp,/tmp
+set directory=~/.vim-tmp,~/tmp,/tmp
 
 if !empty($SUDO_USER) && $USER !=# $SUDO_USER
   set viminfo=
@@ -85,19 +85,19 @@ set splitright
 
 set diffopt+=vertical
 
+"set t_Co=256 " 256 colors
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+let g:solarized_termcolors=&t_Co
+let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+let g:solarized_termtrans=1
+highlight clear SignColumn
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-  "set t_Co=256 " 256 colors
-  if has('gui_running')
-    set background=light
-  else
-    set background=dark
-  endif
-  let g:solarized_termcolors=&t_Co
-  let g:solarized_contrast="high"
-  "let g:solarized_visibility="high"
-  let g:solarized_termtrans=1
   colorscheme solarized
-  highlight clear SignColumn
 endif
 
 "syn match Braces display '[{}()\[\]]'
@@ -158,8 +158,8 @@ nnoremap 0 :buffer 10<cr>
 
 map  <F1>   <Esc>
 map! <F1>   <Esc>
-nmap <silent> <F6> :if &previewwindow<Bar>pclose<Bar>elseif exists(':Gstatus')<Bar>exe 'Gstatus'<Bar>else<Bar>ls<Bar>endif<CR>
-nmap <silent> <F7> :if exists(':Lcd')<Bar>exe 'Lcd'<Bar>elseif exists(':Cd')<Bar>exe 'Cd'<Bar>else<Bar>lcd %:h<Bar>endif<CR>
+"nmap <silent> <F6> :if &previewwindow<Bar>pclose<Bar>elseif exists(':Gstatus')<Bar>exe 'Gstatus'<Bar>else<Bar>ls<Bar>endif<CR>
+"nmap <silent> <F7> :if exists(':Lcd')<Bar>exe 'Lcd'<Bar>elseif exists(':Cd')<Bar>exe 'Cd'<Bar>else<Bar>lcd %:h<Bar>endif<CR>
 map <F8>    :Make<CR>
 map <F9>    :Dispatch<CR>
 map <F10>   :Start<CR>
