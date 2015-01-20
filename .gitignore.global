@@ -12,6 +12,8 @@
 
 *.vcd
 
+*.egg-info/
+
 *.class
 *.dll
 *.exe
