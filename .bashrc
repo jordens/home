@@ -18,6 +18,9 @@ pathadd() {
 
 pathadd ~/bin
 pathadd ~/.local/bin
+for i in ~/.gem/ruby/*/bin; do
+    pathadd "$i"
+done
 
 if which tmux >/dev/null 2>&1; then
     if [ -z "$TMUX" ]; then
