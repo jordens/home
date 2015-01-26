@@ -17,6 +17,7 @@
 /.compiz
 /.comsol
 /.config
+/.condarc
 /.cups
 /.cvpcb
 /.dbus
@@ -35,6 +36,7 @@
 /fp-lib-table
 /.FreeCAD
 /.freerdp
+/.forward
 /.FrontDesign
 /.FrontPanel
 /.gconf
@@ -54,6 +56,7 @@
 /.grc
 /.gstreamer-*
 /.hugin
+/.hplip
 /.ICEauthority
 /.icedtea
 /.icons
