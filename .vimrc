@@ -25,6 +25,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'scrooloose/syntastic'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'hynek/vim-python-pep8-indent'
+    Plugin 'hdima/python-syntax'
     "Plugin 'ervandew/snipmate.vim'
     "Plugin 'kien/ctrlp.vim'
     "Plugin 'davidhalter/jedi-vim'
