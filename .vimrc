@@ -63,6 +63,7 @@ set switchbuf=useopen
 set scrolloff=3
 set modeline
 set nojoinspaces
+set clipboard=unnamedplus
 
 set foldmethod=manual
 set foldnestmax=3
@@ -121,10 +122,6 @@ imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
-
-let mapleader=","
-map <leader>y "*y
-map <leader>p "*p
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
