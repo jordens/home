@@ -123,6 +123,10 @@ imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
+" keep visual mode on after indentation
+vnoremap < <gv
+vnoremap > >gv
+
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
