@@ -1,5 +1,3 @@
-" vim:set ts=2 sts=2 sw=2 expandtab:
-
 set nocompatible
 
 "autocmd!
@@ -184,3 +182,5 @@ map <Leader>v  :so ~/.vimrc<CR>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" vim:set ts=2 sts=2 sw=2 expandtab:
