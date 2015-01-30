@@ -118,6 +118,8 @@ let g:gitgutter_eager = 0
 
 let g:airline#extensions#tabline#enabled = 1
 
+let mapleader=","
+
 " let cursors jump rows, not lines
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
