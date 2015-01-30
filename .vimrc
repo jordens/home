@@ -125,7 +125,6 @@ let g:syntastic_python_checkers = ['python', 'flake8']
 
 let python_highlight_all=1
 
-" vim-gitgutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
