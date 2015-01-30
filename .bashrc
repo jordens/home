@@ -44,23 +44,12 @@ shopt -s histappend
 
 shopt -s checkwinsize
 
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
 export GREP_OPTIONS="--color=auto"
-
-. ~/bin/bash_aliases.sh
-. ~/bin/bash_colors.sh
-. ~/bin/git-completion.sh
-. ~/bin/git-prompt.sh
-
-#export GIT_PS1_SHOWDIRTYSTATE=1
-#export GIT_PS1_SHOWUNTRACKEDFILES=1
-#export GIT_PS1_SHOWSTASHSTATE=1
-
-PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
 
 export DEBNAME="Robert Jordens"
 export DEBFULLNAME="Robert Jördens"
@@ -74,10 +63,25 @@ export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
 
-if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+. ~/bin/bash_colors.sh
+
+. ~/bin/bash_aliases.sh
+
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+if [ -x /usr/bin/dircolors ]; then
+    if [ -f ~/.dircolors ]; then
+        eval "$(dircolors -b ~/.dircolors)"
+    else
+        eval "$(dircolors -b)"
+    fi
 fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+#export GIT_PS1_SHOWDIRTYSTATE=1
+#export GIT_PS1_SHOWUNTRACKEDFILES=1
+#export GIT_PS1_SHOWSTASHSTATE=1
+
+PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
