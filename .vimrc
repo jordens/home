@@ -105,13 +105,13 @@ else
   set background=dark
 endif
 let g:solarized_termcolors=&t_Co
-let g:solarized_contrast="high"
+"let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 let g:solarized_termtrans=1
-highlight clear SignColumn
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
   colorscheme solarized
 endif
+highlight clear SignColumn
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
