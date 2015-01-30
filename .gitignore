@@ -95,6 +95,7 @@
 /.offlineimap
 /.openshot
 /.pam_environment
+/.password-store
 /.pcb
 /.pcbnew
 /pcbnew-*

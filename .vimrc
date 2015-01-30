@@ -81,6 +81,18 @@ if !empty($SUDO_USER) && $USER !=# $SUDO_USER
   set backupdir-=~/.vim-tmp,~/tmp
 endif
 
+augroup swapskip
+  autocmd!
+  silent! autocmd BufNewFile,BufReadPre
+        \ /tmp/*,/var/tmp/*,*/shm/*
+        \ setlocal noswapfile viminfo=
+  if has('persistent_undo')
+    silent! autocmd BufWritePre
+          \ /tmp/*,/var/tmp/*,*/shm/*
+          \ setlocal noundofile
+  endif
+augroup END
+
 set splitbelow
 set splitright
 
