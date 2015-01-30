@@ -112,6 +112,7 @@ if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"
   colorscheme solarized
 endif
 highlight clear SignColumn
+"call gitgutter#highlight#define_highlights()
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
