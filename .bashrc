@@ -10,16 +10,22 @@ case "$TERM" in
     ;;
 esac
 
-pathadd() {
+pathappend() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="${PATH:+"$PATH:"}$1"
     fi
 }
 
-pathadd ~/bin
-pathadd ~/.local/bin
+pathprepend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1${PATH:+":$PATH"}"
+    fi
+}
+
+pathappend ~/bin
+pathprepend ~/.local/bin
 for i in ~/.gem/ruby/*/bin; do
-    pathadd "$i"
+    pathprepend "$i"
 done
 
 if which tmux >/dev/null 2>&1; then
