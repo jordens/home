@@ -6,6 +6,11 @@ function lsl() {
     ls --color=always "$@" | less -R
 }
 
+function agl() {
+    ag --color "$@" | less -R
+}
+
+
 alias ls='ls --color=auto'
 alias ll='ls -halF --color=auto'
 alias la='ls -A --color=auto'
