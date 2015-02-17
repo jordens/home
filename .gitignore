@@ -20,6 +20,7 @@
 /.condarc
 /.cups
 /.cvpcb
+/.cmake
 /.dbus
 /.dia
 /.dmrc
@@ -109,6 +110,7 @@
 /.python*_compiled
 /.python_history
 /.pyzor
+/.pry_history
 /.qt
 /.qucs
 /.remmina
