@@ -18,6 +18,7 @@
 /.comsol
 /.config
 /.condarc
+/.conda
 /.cups
 /.cvpcb
 /.cmake
