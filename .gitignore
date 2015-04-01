@@ -38,6 +38,7 @@
 /fp-lib-table
 /.FreeCAD
 /.freerdp
+/.fltk
 /.forward
 /.FrontDesign
 /.FrontPanel
@@ -83,6 +84,7 @@
 /.Mathematica
 /.matlab
 /.mlabs
+/.migen
 /.mozilla
 /.mplayer
 /.mutt/aliases
@@ -111,6 +113,7 @@
 /.python*_compiled
 /.python_history
 /.pyzor
+/.pyxbld
 /.pry_history
 /.qt
 /.qucs
