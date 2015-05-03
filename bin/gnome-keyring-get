@@ -22,5 +22,6 @@ if __name__ == "__main__":
     for l in sys.argv[1:]:
         k, v = l.split("=", 1)
         attrs[k] = v
-    for n, s in gnome_keyring_get(**attrs):
-        print n, s
+    if attrs:
+        for n, s in gnome_keyring_get(**attrs):
+            print n, s
