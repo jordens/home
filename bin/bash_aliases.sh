@@ -10,6 +10,9 @@ function agl() {
     ag --color "$@" | less -R
 }
 
+function treel() {
+    tree -C "$@" | less -R
+}
 
 alias ls='ls --color=auto'
 alias ll='ls -halF --color=auto'
