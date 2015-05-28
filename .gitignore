@@ -6,6 +6,7 @@
 /.AppleDouble
 /.appletviewer
 /.apport-ignore.xml
+/.appcfg*
 /.aptitude
 /.bash_history
 /.bazaar
@@ -59,6 +60,8 @@
 /.gnuradio
 /.googleearth
 /.grc
+/.grc_gnuradio
+/.gr_fftw_wisdom
 /.gstreamer-*
 /.hugin
 /.hplip
@@ -141,8 +144,11 @@ _autosave-
 /.vim/.netrwhist
 /.virt-manager
 /.VirtualBox
+/.vmware
+/.vmware-view-client*
 /.w3m
 /.wine
+/.wine64
 /.wireshark
 /.Xauthority*
 /.Xilinx
