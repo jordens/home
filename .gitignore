@@ -121,6 +121,7 @@ _autosave-
 /.python_history
 /.pyzor
 /.pyxbld
+/.ptbt*
 /.pry_history
 /.qt
 /.qucs
