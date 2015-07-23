@@ -123,6 +123,7 @@ _autosave-
 /.pyxbld
 /.ptbt*
 /.pry_history
+/.pulse-cookie
 /.qt
 /.qucs
 /.remmina
