@@ -55,8 +55,6 @@ if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
-export GREP_OPTIONS="--color=auto"
-
 export DEBNAME="Robert Jordens"
 export DEBFULLNAME="Robert Jördens"
 export DEBEMAIL=jordens@gmail.com
