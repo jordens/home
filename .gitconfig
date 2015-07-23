@@ -48,3 +48,8 @@
     pullff = pull --ff-only
     ff = merge --ff-only
     noff = merge --no-ff
+    # https://gist.github.com/nh2/66e1cd83a86da7fe43b1
+    # Usage: git signoff-rebase [base-commit]
+    signoff-rebase = "!EDITOR='sed -i -re s/^pick/e/' sh -c 'git rebase -i $1 && while test -f .git/rebase-merge/interactive; do git commit --amend --signoff --no-edit && git rebase --continue; done' -"
+    # Ideally we would use GIT_SEQUENCE_EDITOR in the above instead of EDITOR
+    # but that's not supported for git < 1.7.8.
