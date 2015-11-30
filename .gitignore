@@ -28,6 +28,7 @@
 /.dbus
 /.dia
 /.dmrc
+/.dosbox
 /.eagle
 /.eaglerc
 /.ec2
@@ -63,6 +64,7 @@
 /.grc_gnuradio
 /.gr_fftw_wisdom
 /.gstreamer-*
+/.gspiceui.conf
 /.hugin
 /.hplip
 /.htcfg2
@@ -75,6 +77,7 @@
 /.jackdrc
 /.java
 /.jtag
+/.jupyter
 /.kde
 /.kicad*
 /kicad-*
@@ -103,6 +106,7 @@ _autosave-
 /.npm
 /.nv
 /.nvidia-settings-rc
+/.ngspice_history
 /.offlineimap
 /.openshot
 /.pam_environment
@@ -119,6 +123,7 @@ _autosave-
 /.pypirc
 /.python*_compiled
 /.python_history
+/.pythonhist
 /.pyzor
 /.pyxbld
 /.ptbt*
@@ -138,6 +143,7 @@ _autosave-
 /.sudo_as_admin_successful
 /.thumbnails
 /.thunderbird
+/.ti
 /.tox
 /.travis
 /.unison
@@ -148,6 +154,7 @@ _autosave-
 /.VirtualBox
 /.vmware
 /.vmware-view-client*
+/.volk
 /.w3m
 /.wine
 /.wine64
