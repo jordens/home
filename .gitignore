@@ -8,6 +8,8 @@
 /.apport-ignore.xml
 /.appcfg*
 /.aptitude
+/.audacity-data
+/.asoundrc
 /.bash_history
 /.bazaar
 /.blender
@@ -103,10 +105,12 @@ _autosave-
 /.mysql_history
 /.nemiver
 /.netrc
+/.neoman
 /.npm
 /.nv
 /.nvidia-settings-rc
 /.ngspice_history
+/.ngnutmeg_history
 /.offlineimap
 /.openshot
 /.pam_environment
@@ -117,9 +121,11 @@ _autosave-
 /_autosave*.kicad*
 /.pip
 /.pki
+/.presage
 /.pulse
 /.purple
 /.pylint.d
+/.pymazon
 /.pypirc
 /.python*_compiled
 /.python_history
