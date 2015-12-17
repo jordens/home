@@ -1,0 +1,49 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# 2015 Robert Jordens <jordens@gmail.com>
+
+from __future__ import print_function, unicode_literals, division
+
+import sys
+import argparse
+import re
+
+import colorama
+
+colorama.init()
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--number", "-n", default=1, type=int,
+                        help="maximum number of colorization patterns "
+                        "per line")
+    parser.add_argument("--output", "-o", default="stdout",
+                        help="output lines on stderr or stdout")
+    parser.add_argument("pattern", nargs="+",
+                        help="regex=FOREGROUND[.BACKGROUND[.STYLE]] "
+                        "colorization rules")
+    opts = parser.parse_args()
+    keywords = []
+    for k in opts.pattern:
+        pattern, color = k.rsplit("=", 1)
+        pattern = re.compile(pattern)
+        color = "".join(getattr(_, c) for _, c in zip(
+            (colorama.Fore, colorama.Back, colorama.Style),
+            color.split(".")))
+        color = r"{}\g<0>{}".format(color, colorama.Style.RESET_ALL)
+        keywords.append((pattern, color))
+    stream = getattr(sys, opts.output)
+    for line in iter(sys.stdin.readline, ""):
+        n = opts.number
+        for pattern, color in keywords:
+            line, m = re.subn(pattern, color, line, n)
+            n -= m
+            if not n:
+                break
+        stream.write(line)
+
+
+if __name__ == "__main__":
+    main()
