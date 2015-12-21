@@ -25,6 +25,10 @@
     autosquash = true
 [include]
     path = ~/.gitconfig.local
+[diff "bit"]
+    textconv = hexdump -v -C
+[diff "ipynb"]
+    textconv = ipython nbconvert myfile.ipynb --to python --stdout
 [alias]
     log1 = log --pretty=oneline --decorate
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
