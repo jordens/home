@@ -23,6 +23,8 @@
     singlekey = true
 [rebase]
     autosquash = true
+[help]
+	autocorrect = 10
 [include]
     path = ~/.gitconfig.local
 [diff "bit"]
