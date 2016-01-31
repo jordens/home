@@ -20,7 +20,8 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-obsession'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'rking/ag.vim'
-    Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'ervandew/supertab'
     Plugin 'scrooloose/syntastic'
     Plugin 'airblade/vim-gitgutter'
@@ -132,6 +133,7 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'solarized'
 
 let mapleader=","
 
