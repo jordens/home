@@ -9,8 +9,7 @@
 
 .svn
 .bzr
-
-*.vcd
+.hg
 
 *.egg-info/
 
@@ -19,6 +18,7 @@
 *.exe
 *.o
 *.so
+*.a
 
 *.7z
 *.dmg
@@ -33,6 +33,7 @@
 
 *.log
 *.sqlite
+*.vcd
 
 .DS_Store
 .DS_Store?
@@ -40,3 +41,4 @@
 .Trashes
 .Trash
 Thumbs.db
+Session.vim
