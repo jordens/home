@@ -67,9 +67,9 @@ export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
 
-. ~/bin/bash_colors.sh
+. ~/.bash_colors.sh
 
-. ~/bin/bash_aliases.sh
+. ~/.bash_aliases.sh
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
