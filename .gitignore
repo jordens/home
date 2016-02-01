@@ -162,6 +162,7 @@ _autosave-
 /.vmware-view-client*
 /.volk
 /.w3m
+/.wget-hsts
 /.wine
 /.wine64
 /.wireshark
