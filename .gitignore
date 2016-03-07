@@ -41,6 +41,7 @@
 /.flexlmrc
 /.fontconfig
 /.fonts
+/.fonts.conf
 /fp-lib-table
 /.FreeCAD
 /.freerdp
@@ -67,6 +68,7 @@
 /.gr_fftw_wisdom
 /.gstreamer-*
 /.gspiceui.conf
+/.gvfs
 /.hugin
 /.hplip
 /.htcfg2
