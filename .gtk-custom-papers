@@ -8,3 +8,14 @@ MarginBottom=4.2333333333333325
 MarginLeft=4.2333333333333325
 MarginRight=4.2333333333333325
 Orientation=portrait
+
+[Paper1]
+Name=10x21cm
+DisplayName=10x21cm
+Width=100.07599999999999
+Height=210.05799999999996
+MarginTop=4.5861111111111104
+MarginBottom=4.5861111111111104
+MarginLeft=4.2333333333333325
+MarginRight=4.2333333333333325
+Orientation=portrait
