@@ -64,7 +64,7 @@ bind '"\e[D": backward-char'
 # Record each line as it gets issued
 PROMPT_COMMAND='history -a'
 # Automatically trim long paths in the prompt (requires Bash 4.x)
-PROMPT_DIRTRIM=2
+PROMPT_DIRTRIM=3
 
 # Prepend cd to directory names automatically
 shopt -s autocd 2> /dev/null
@@ -86,11 +86,11 @@ shopt -s checkwinsize
 
 ## SMARTER TAB-COMPLETION (Readline bindings) ##
 # Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
+# bind "set completion-ignore-case on"
 # Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
+# bind "set completion-map-case on"
 # Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
+# bind "set show-all-if-ambiguous on"
 
 
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
