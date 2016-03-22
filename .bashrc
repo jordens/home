@@ -1,7 +1,10 @@
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+    *i*)
+    ;;
+    *)
+          return
+    ;;
 esac
 
 case "$TERM" in
@@ -48,21 +51,20 @@ HISTCONTROL=ignorespace:ignoredups:erasedups
 HISTSIZE=500000
 HISTFILESIZE=100000
 # Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:sync"
 # Useful timestamp format
-HISTTIMEFORMAT='%F %T '
+HISTTIMEFORMAT="%F %T "
 # Append to the history file, don't overwrite it
 shopt -s histappend
 # Save multi-line commands as one command
 shopt -s cmdhist
-# Enable incremental history search with up/down arrows (also Readline goodness)
-# Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
+# History search with just arrow keys
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
 # Record each line as it gets issued
-PROMPT_COMMAND='history -a'
+PROMPT_COMMAND="history -a"
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=3
 
@@ -72,32 +74,16 @@ shopt -s autocd 2> /dev/null
 shopt -s dirspell
 # Correct spelling errors in arguments supplied to cd
 shopt -s cdspell 2> /dev/null
-# This allows you to bookmark your favorite places across the file system
-# Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
+# Allow cd-ing into variables that are defined
 shopt -s cdable_vars
 
 # This defines where cd looks for targets
-# Add the directories you want to have fast access to, separated by colon
-# Ex: CDPATH=".:~:~/projects" will look for targets in the current working directory, in home and in the ~/projects folder
-CDPATH="."
+CDPATH=".:~"
 
 # Update window size after every command
 shopt -s checkwinsize
 
-## SMARTER TAB-COMPLETION (Readline bindings) ##
-# Perform file completion in a case insensitive fashion
-# bind "set completion-ignore-case on"
-# Treat hyphens and underscores as equivalent
-# bind "set completion-map-case on"
-# Display matches for ambiguous patterns at first tab press
-# bind "set show-all-if-ambiguous on"
-
-
-if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-
+export HOSTNAME=$(hostname)
 export DEBNAME="Robert Jordens"
 export DEBFULLNAME="Robert Jördens"
 export DEBEMAIL=jordens@gmail.com
@@ -110,11 +96,28 @@ export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
 
-. ~/.bash_colors.sh
+if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock_$HOSTNAME
+fi
+# will be overwritten by gpg-agent-info with enable-ssh-support
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock_$HOSTNAME
 
-. ~/.bash_aliases.sh
+if [ -x /usr/bin/gpg-connect-agent ] && \
+    gpg-connect-agent /bye && \
+    [ -f ~/.gpg-agent-info ]; then
+    source ~/.gpg-agent-info
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+export GPG_TTY=$(tty)
 
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+source ~/.bash_colors.sh
+
+source ~/.bash_aliases.sh
+
+if [ -x /usr/bin/lesspipe ]; then
+    eval "$(SHELL=/bin/sh lesspipe)"
+fi
 
 if [ -x /usr/bin/dircolors ]; then
     if [ -f ~/.dircolors ]; then
@@ -132,9 +135,9 @@ PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+    source /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    source /etc/bash_completion
   fi
 fi
 

@@ -62,6 +62,7 @@
 /.gnome
 /.gnome2
 /.gnuradio
+/.gpg-agent-info
 /.googleearth
 /.grc
 /.grc_gnuradio
@@ -185,6 +186,7 @@ _autosave-
 !/.ssh/config.global
 /.gnupg/*
 !/.gnupg/gpg.conf
+!/.gnupg/gpg-agent.conf
 
 /Desktop
 /Documents
