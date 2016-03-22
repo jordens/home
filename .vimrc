@@ -48,7 +48,7 @@ set mousemodel=popup
 set autowrite
 set linebreak
 set cpoptions+=n
-set showbreak=+
+let &showbreak='+ '
 if exists('+breakindent')
   set breakindent
 endif
