@@ -47,9 +47,10 @@ set mouse=a
 set mousemodel=popup
 set autowrite
 set linebreak
+set cpoptions+=n
+set showbreak=+
 if exists('+breakindent')
-"  set breakindent showbreak=+
-  set breakindent showbreak=↪
+  set breakindent
 endif
 set wrap
 set textwidth=79
