@@ -184,6 +184,7 @@ _autosave-
 
 /.ssh/*
 !/.ssh/config.global
+!/.ssh/authorized_keys_all
 /.gnupg/*
 !/.gnupg/gpg.conf
 !/.gnupg/gpg-agent.conf
