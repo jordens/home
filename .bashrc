@@ -31,18 +31,19 @@ for i in ~/.gem/ruby/*/bin; do
     pathprepend "$i"
 done
 
-if which tmux >/dev/null 2>&1; then
-    if [ -z "$TMUX" ]; then
-        if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-            _tmux_type=remote
-        else
-            _tmux_type=local
-        fi
-        if tmux has-session -t $_tmux_type; then # no -PA in old tmux
-            exec tmux attach-session -t $_tmux_type
-        else
-            exec tmux new-session -s $_tmux_type
-        fi
+if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_TTY" ]; then
+    read SSH_CLIENT_IP SSH_CLIENT_PORT SSH_SERVER_IP SSH_SERVER_PORT \
+        <<< $SSH_CONNECTION
+    SESSION_TYPE=remote
+else
+    SESSION_TYPE=local
+fi
+
+if which tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+    if tmux has-session -t $SESSION_TYPE; then # no -PA in old tmux
+        exec tmux attach-session -t $SESSION_TYPE
+    else
+        exec tmux new-session -s $SESSION_TYPE
     fi
 fi
 
@@ -87,7 +88,7 @@ export HOSTNAME=$(hostname)
 export DEBNAME="Robert Jordens"
 export DEBFULLNAME="Robert Jördens"
 export DEBEMAIL=jordens@gmail.com
-export DEBSIGN_KEYID=E02FEF11
+export DEBSIGN_KEYID=4130198A64FEFBAF
 export REPORTBUGEMAIL=jordens@gmail.com
 export IRCNICK=rjo
 export EMAIL=jordens@gmail.com
@@ -97,19 +98,23 @@ export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
 
 if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock_$HOSTNAME
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock_${SSH_CLIENT_IP}_$HOSTNAME
 fi
 # will be overwritten by gpg-agent-info with enable-ssh-support
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock_$HOSTNAME
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock_${SSH_CLIENT_IP}_$HOSTNAME
 
-if [ -x /usr/bin/gpg-connect-agent ] && \
-    gpg-connect-agent /bye && \
-    [ -f ~/.gpg-agent-info ]; then
-    source ~/.gpg-agent-info
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
+if [ "$SESSION_TYPE" = "local" ]; then  # gpg-agent does no ssh-agent forwarding
+    if which gpg-connect-agent >/dev/null 2>&1 && \
+        ! gpg-connect-agent /bye >/dev/null 2>&1; then
+        eval $(gpg-agent --daemon)
+    fi
+    if [ -f ~/.gpg-agent-info ]; then
+        source ~/.gpg-agent-info
+        export GPG_AGENT_INFO
+        export SSH_AUTH_SOCK
+    fi
+    export GPG_TTY=$(tty)
 fi
-export GPG_TTY=$(tty)
 
 source ~/.bash_colors.sh
 

@@ -5,7 +5,7 @@
 [user]
     name = Robert Jordens
     email = jordens@gmail.com
-    signingkey = E02FEF11
+    signingkey = 4130198A64FEFBAF
 [core]
     excludesfile = ~/.gitignore.global
     pager = less -F -X
