@@ -48,27 +48,18 @@ if which tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
 fi
 
 HISTCONTROL=ignorespace:ignoredups:erasedups
-# Huge history. Doesn't appear to slow things down, so why not?
 HISTSIZE=500000
 HISTFILESIZE=100000
-# Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:sync"
-# Useful timestamp format
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear:sync"
 HISTTIMEFORMAT="%F %T "
-# Append to the history file, don't overwrite it
-shopt -s histappend
-# Save multi-line commands as one command
-shopt -s cmdhist
-# History search with just arrow keys
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\e[C": forward-char'
-bind '"\e[D": backward-char'
-# Record each line as it gets issued
-PROMPT_COMMAND="history -a"
-# Automatically trim long paths in the prompt (requires Bash 4.x)
+# shorten prompt pwd
 PROMPT_DIRTRIM=3
-
+# immediately append
+PROMPT_COMMAND="history -a"
+# append not overwrite
+shopt -s histappend
+# multi-line commands as one
+shopt -s cmdhist
 # Prepend cd to directory names automatically
 shopt -s autocd 2> /dev/null
 # Correct spelling errors during tab-completion
@@ -77,8 +68,9 @@ shopt -s dirspell
 shopt -s cdspell 2> /dev/null
 # Allow cd-ing into variables that are defined
 shopt -s cdable_vars
-
-# This defines where cd looks for targets
+# defer exit when running bg jobs
+shopt -s checkjobs
+# where cd looks for targets
 CDPATH=".:~"
 
 # Update window size after every command
