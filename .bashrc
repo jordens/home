@@ -1,16 +1,12 @@
 # If not running interactively, don't do anything
 case $- in
-    *i*)
-    ;;
-    *)
-          return
-    ;;
+    *i*) ;;
+    *) return ;;
 esac
 
 case "$TERM" in
-    xterm*)
-        export TERM="xterm-256color"
-    ;;
+    xterm*) export TERM="xterm-256color" ;;
+    screen*) export TERM="screen-256color" ;;
 esac
 
 pathappend() {
