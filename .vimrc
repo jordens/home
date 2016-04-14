@@ -29,6 +29,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'hynek/vim-python-pep8-indent'
     Plugin 'hdima/python-syntax'
     Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'dhruvasagar/vim-table-mode'
     "Plugin 'google/vim-maktaba'
     "Plugin 'google/vim-codefmt'
     "Plugin 'google/vim-glaive'
