@@ -134,6 +134,7 @@ _autosave-
 /.python*_compiled
 /.python_history
 /.pythonhist
+/.python-eggs
 /.pyzor
 /.pyxbld
 /.ptbt*
