@@ -10,8 +10,10 @@
 /.aptitude
 /.audacity-data
 /.asoundrc
+/.artiq_*
 /.bash_history
 /.bazaar
+/.bitcoin
 /.blender
 /.bogofilter
 /.BRP_PACU
@@ -71,6 +73,7 @@
 /.gspiceui.conf
 /.gvfs
 /.hugin
+/.histfile*
 /.hplip
 /.htcfg2
 /.ICEauthority
@@ -153,6 +156,7 @@ _autosave-
 /.ssl
 /.subversion
 /.sudo_as_admin_successful
+/.synaptic
 /.thumbnails
 /.thunderbird
 /.ti
@@ -179,10 +183,9 @@ _autosave-
 /.xournal
 /.xscreensaver
 /.xsession-errors*
+/.zcompdump
 /*.kicad_pcb.lock
 /*.lock
-/.bitcoin
-/.synaptic
 
 /.ssh/*
 !/.ssh/config.global
