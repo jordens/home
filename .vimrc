@@ -19,6 +19,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     "Plugin 'tpope/vim-rhubarb'
     "Plugin 'tpope/vim-vinegar'
     Plugin 'tpope/vim-obsession'
+    Plugin 'rust-lang/rust.vim'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'rking/ag.vim'
