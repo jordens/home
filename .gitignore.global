@@ -43,3 +43,4 @@
 .Trash
 Thumbs.db
 Session.vim
+.ipynb_checkpoints
