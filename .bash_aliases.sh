@@ -14,6 +14,10 @@ function treel() {
     tree -C "$@" | less -R
 }
 
+function dictl() {
+    dict "$@" | less
+}
+
 alias ls='ls --color=auto'
 alias ll='ls -halF --color=auto'
 alias la='ls -A --color=auto'
