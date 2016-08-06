@@ -20,6 +20,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     "Plugin 'tpope/vim-vinegar'
     Plugin 'tpope/vim-obsession'
     Plugin 'rust-lang/rust.vim'
+    Plugin 'racer-rust/vim-racer'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'rking/ag.vim'
@@ -138,6 +139,8 @@ let g:syntastic_python_flake8_args = '-m flake8.run'
 let g:syntastic_python_checkers = ['python', 'flake8']
 
 let python_highlight_all=1
+
+let g:racer_cmd = "~/.cargo/bin/racer"
 
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
