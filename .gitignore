@@ -149,8 +149,10 @@ _autosave-
 /.qucs
 /.remmina
 /.ropeproject
+/.rnd
 /.rpmdb
 /.s3cfg
+/.sane
 /.scribus
 /.slocdata
 /.smb
@@ -160,6 +162,8 @@ _autosave-
 /.subversion
 /.sudo_as_admin_successful
 /.synaptic
+/.tabula
+/.texmf-var
 /.thumbnails
 /.thunderbird
 /.ti
@@ -186,6 +190,7 @@ _autosave-
 /.xournal
 /.xscreensaver
 /.xsession-errors*
+/.yubioath
 /.zcompdump
 /*.kicad_pcb.lock
 /*.lock
