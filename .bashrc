@@ -86,23 +86,20 @@ export EDITOR=vim
 export PAGER=less
 export LESS="--RAW-CONTROL-CHARS"
 
-if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock_${SSH_CLIENT_IP}_$HOSTNAME
-fi
-# will be overwritten by gpg-agent-info with enable-ssh-support
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock_${SSH_CLIENT_IP}_$HOSTNAME
+export GPG_TTY=$(tty)
 
-if [ "$SESSION_TYPE" = "local" ]; then  # gpg-agent does no ssh-agent forwarding
+if [ "$SESSION_TYPE" = "local" ]; then
+    # gpg-agent doesn't do ssh-agent forwarding, needs explicit start and env
+    # setting
     if which gpg-connect-agent >/dev/null 2>&1 && \
-        ! gpg-connect-agent /bye >/dev/null 2>&1; then
-        eval $(gpg-agent --daemon)
+        gpg-connect-agent /bye >/dev/null 2>&1; then
+        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     fi
-    if [ -f ~/.gpg-agent-info ]; then
-        source ~/.gpg-agent-info
-        export GPG_AGENT_INFO
-        export SSH_AUTH_SOCK
+else
+    if [ -S "$SSH_AUTH_SOCK" ]; then
+        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock_${SSH_CLIENT_IP}_${HOSTNAME}
     fi
-    export GPG_TTY=$(tty)
+    export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock_${SSH_CLIENT_IP}_${HOSTNAME}
 fi
 
 source ~/.bash_colors.sh
