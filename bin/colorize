@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # 2015 Robert Jordens <jordens@gmail.com>
@@ -22,7 +22,7 @@ def main():
     parser.add_argument("pattern", nargs="*",
                         help="regex=FOREGROUND[.BACKGROUND[.STYLE]] "
                         "colorization rules [%(default)s]", default=[
-                            "^ERROR:=RED", "^WARNING:=YELLOW", "^INFO:=GREEN"])
+                            "^ERROR:.*$=RED", "^WARNING:.*$=YELLOW", "^INFO:.*$=GREEN"])
     opts = parser.parse_args()
     keywords = []
     for k in opts.pattern:
