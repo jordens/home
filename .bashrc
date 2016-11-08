@@ -130,6 +130,7 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
   fi
+  complete -C aws_completer aws
 fi
 
 # vim: et ts=4 sw=4
