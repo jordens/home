@@ -11,6 +11,7 @@
 /.audacity-data
 /.asoundrc
 /.artiq_*
+/.aws
 /.bash_history
 /.bazaar
 /.bitcoin
@@ -34,6 +35,8 @@
 /.dia
 /.dmrc
 /.dosbox
+/.dropbox
+/.dropbox-dist
 /.eagle
 /.eaglerc
 /.ec2
@@ -119,6 +122,7 @@ _autosave-
 /.nvidia-settings-rc
 /.ngspice_history
 /.ngnutmeg_history
+/.odbc.ini
 /.offlineimap
 /.openshot
 /.openfilters
