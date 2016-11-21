@@ -106,6 +106,7 @@ _autosave-
 /.macromedia
 /.Mathematica
 /.matlab
+/.mgc
 /.mlabs
 /.migen
 /.mozilla
@@ -114,6 +115,7 @@ _autosave-
 /.mutt/cache
 /.mutt/certificates
 /.mysql_history
+/.mw
 /.nemiver
 /.netrc
 /.neoman
