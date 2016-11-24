@@ -127,7 +127,6 @@ if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"
   colorscheme solarized
 endif
 highlight clear SignColumn
-"call gitgutter#highlight#define_highlights()
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
@@ -141,9 +140,6 @@ let g:syntastic_python_checkers = ['python', 'flake8']
 let python_highlight_all=1
 
 let g:racer_cmd = "~/.cargo/bin/racer"
-
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
 
 let g:airline_theme = 'solarized'
 let g:airline#extensions#tabline#enabled = 1
