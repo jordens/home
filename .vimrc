@@ -16,14 +16,15 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-dispatch'
     Plugin 'tpope/vim-sleuth'
     Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-obsession'
     "Plugin 'tpope/vim-rhubarb'
     "Plugin 'tpope/vim-vinegar'
-    Plugin 'tpope/vim-obsession'
+    Plugin 'editorconfig/editorconfig-vim'
     Plugin 'rust-lang/rust.vim'
     Plugin 'racer-rust/vim-racer'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'altercation/vim-colors-solarized'
-    Plugin 'rking/ag.vim'
+    "Plugin 'rking/ag.vim'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'ervandew/supertab'
@@ -31,6 +32,7 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'airblade/vim-gitgutter'
     Plugin 'hynek/vim-python-pep8-indent'
     Plugin 'hdima/python-syntax'
+    "Plugin 'klen/python-mode'
     "Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'dhruvasagar/vim-table-mode'
     "Plugin 'Valloric/YouCompleteMe'
@@ -41,7 +43,6 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     "Plugin 'davidhalter/jedi-vim'
     "Plugin 'Lokaltog/vim-easymotion'
     "Plugin 'mattn/emmet-vim'
-    "Plugin 'klen/python-mode'
   call vundle#end()
 endif
 
@@ -130,6 +131,8 @@ highlight clear SignColumn
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 "let g:syntastic_quiet_messages = {"level": "warnings", "type": "style"}
 let g:syntastic_python_python_exec = 'python3'
