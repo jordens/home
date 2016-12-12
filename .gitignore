@@ -17,6 +17,7 @@
 /.bitcoin
 /.blender
 /.bogofilter
+/.bundle
 /.BRP_PACU
 /.bzr.log*
 /.cargo
@@ -128,6 +129,7 @@ _autosave-
 /.offlineimap
 /.openshot
 /.openfilters
+/.oracle_jre_usage
 /.pam_environment
 /.password-store
 /.pcb
@@ -176,6 +178,7 @@ _autosave-
 /.tox
 /.travis
 /.unison
+/.varicad-viewer*
 /.vim/bundle
 /.viminf*
 /.vim/.netrwhist
