@@ -109,6 +109,14 @@ augroup swapskip
   endif
 augroup END
 
+augroup mkdirpre
+  autocmd!
+  autocmd BufWritePre *
+    \ if !isdirectory(expand("<afile>:p:h")) |
+        \ call mkdir(expand("<afile>:p:h"), "p") |
+    \ endif
+augroup END
+
 set splitbelow
 set splitright
 
