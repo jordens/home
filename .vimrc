@@ -140,6 +140,7 @@ highlight clear SignColumn
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
 
+" set tags=./.git/tags
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 "let g:syntastic_quiet_messages = {"level": "warnings", "type": "style"}
@@ -208,6 +209,11 @@ map <F9>    :Dispatch<CR>
 map <F10>   :Start<CR>
 
 map <Leader>v  :so ~/.vimrc<CR>
+
+noremap <Leader>w :w<CR>
+noremap <Leader>q :q<CR>
+noremap <Leader>wq :wq<CR>
+noremap <Leader>b :bd<CR>
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

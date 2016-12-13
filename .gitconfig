@@ -18,8 +18,8 @@
 #   enabled = true
 [github]
     user = jordens
-#[init]
-#    templatedir = ~/.git_template
+[init]
+    templatedir = ~/.git_template
 [interactive]
     singlekey = true
 [rebase]
@@ -58,6 +58,7 @@
     signoff-rebase = "!EDITOR='sed -i -re s/^pick/e/' sh -c 'git rebase -i $1 && while test -f .git/rebase-merge/interactive; do git commit --amend --signoff --no-edit && git rebase --continue; done' -"
     # Ideally we would use GIT_SEQUENCE_EDITOR in the above instead of EDITOR
     # but that's not supported for git < 1.7.8.
+	ctags = !.git/hooks/ctags
 [gpg]
 	program = gpg2
 [include]
