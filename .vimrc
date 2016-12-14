@@ -17,11 +17,12 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'tpope/vim-sleuth'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-obsession'
-    "Plugin 'tpope/vim-rhubarb'
+    Plugin 'tpope/vim-rhubarb'
     "Plugin 'tpope/vim-vinegar'
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'rust-lang/rust.vim'
     Plugin 'racer-rust/vim-racer'
+    " better than netrw/vinegar:
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'altercation/vim-colors-solarized'
     "Plugin 'rking/ag.vim'
@@ -148,6 +149,7 @@ let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_flake8_exec = 'python3'
 let g:syntastic_python_flake8_args = '-m flake8.run'
 let g:syntastic_python_checkers = ['python', 'flake8']
+" autocmd FileType python setlocal omnifunc=python3complete#Complete
 
 let python_highlight_all=1
 
