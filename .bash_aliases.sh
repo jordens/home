@@ -1,3 +1,13 @@
+function mkcd() {
+  if [ $# -eq 0 ]; then
+    echo -e "Usage: mkcd \e[2m[directory]\e[0m"
+  elif [ -d $1 ]; then
+    echo -e "\e[31mError:\e[0m Directory \`$1\` already exists"
+  else
+    mkdir $1 && cd $1
+  fi
+}
+
 function grepl() {
     grep --color=always "$@" | less -R
 }
