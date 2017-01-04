@@ -29,9 +29,9 @@ if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'ervandew/supertab'
-    Plugin 'scrooloose/syntastic'
+    Plugin 'neomake/neomake'
     Plugin 'airblade/vim-gitgutter'
-    Plugin 'hynek/vim-python-pep8-indent'
+    "Plugin 'hynek/vim-python-pep8-indent'
     Plugin 'hdima/python-syntax'
     "Plugin 'klen/python-mode'
     "Plugin 'ctrlpvim/ctrlp.vim'
@@ -144,11 +144,11 @@ highlight clear SignColumn
 " set tags=./.git/tags
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-"let g:syntastic_quiet_messages = {"level": "warnings", "type": "style"}
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_flake8_exec = 'python3'
-let g:syntastic_python_flake8_args = '-m flake8.run'
-let g:syntastic_python_checkers = ['python', 'flake8']
+autocmd! BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['flake8']
+
+let python_highlight_all = 1
+
 " autocmd FileType python setlocal omnifunc=python3complete#Complete
 
 let python_highlight_all=1
