@@ -16,6 +16,7 @@
 /.bazaar
 /.bitcoin
 /.blender
+/.blueproximity
 /.bogofilter
 /.bundle
 /.BRP_PACU
@@ -33,6 +34,7 @@
 /.cvpcb
 /.cmake
 /.dbus
+/.debug
 /.dia
 /.dmrc
 /.dosbox
@@ -56,6 +58,7 @@
 /.forward
 /.FrontDesign
 /.FrontPanel
+/.ganttproject
 /.gconf
 /.gdb_history
 /.gEDA
@@ -76,6 +79,7 @@
 /.gr_fftw_wisdom
 /.gstreamer-*
 /.gspiceui.conf
+/.gtk-bookmarks
 /.gvfs
 /.hugin
 /.hugindata
@@ -104,6 +108,7 @@ _autosave-
 /.libao
 /.libquicktime_codecs
 /.local
+/.lyx
 /.macromedia
 /.Mathematica
 /.matlab
@@ -170,6 +175,7 @@ _autosave-
 /.subversion
 /.sudo_as_admin_successful
 /.synaptic
+/.swt
 /.tabula
 /.texmf-var
 /.thumbnails
@@ -179,7 +185,10 @@ _autosave-
 /.travis
 /.unison
 /.varicad-viewer*
+/.vidyo
+/.vidyo_
 /.vim/plugged
+/.vim/spell
 /.viminf*
 /.vim/.netrwhist
 /.virt-manager
@@ -222,6 +231,8 @@ _autosave-
 /Templates
 /Videos
 /public_html
+/nextcloud
+/ownCloud
 
 /work/*
 !/work/.keep_me
