@@ -143,8 +143,6 @@ let python_highlight_all = 1
 
 " autocmd FileType python setlocal omnifunc=python3complete#Complete
 
-let python_highlight_all=1
-
 let g:racer_cmd = "~/.cargo/bin/racer"
 
 let g:airline_theme = 'solarized'
