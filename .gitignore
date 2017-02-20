@@ -179,7 +179,7 @@ _autosave-
 /.travis
 /.unison
 /.varicad-viewer*
-/.vim/bundle
+/.vim/plugged
 /.viminf*
 /.vim/.netrwhist
 /.virt-manager

@@ -1,51 +1,44 @@
 set nocompatible
 
-"autocmd!
-
-if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
-  filetype off
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-    Plugin 'gmarik/Vundle.vim'
-    Plugin 'tpope/vim-sensible'
-    Plugin 'tpope/vim-repeat'
-    Plugin 'tpope/vim-eunuch'
-    Plugin 'tpope/vim-unimpaired'
-    Plugin 'tpope/vim-surround'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'tpope/vim-dispatch'
-    Plugin 'tpope/vim-sleuth'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-obsession'
-    Plugin 'tpope/vim-rhubarb'
-    "Plugin 'tpope/vim-vinegar'
-    Plugin 'editorconfig/editorconfig-vim'
-    Plugin 'rust-lang/rust.vim'
-    Plugin 'racer-rust/vim-racer'
-    " better than netrw/vinegar:
-    Plugin 'jeetsukumaran/vim-filebeagle'
-    Plugin 'altercation/vim-colors-solarized'
-    "Plugin 'rking/ag.vim'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'ervandew/supertab'
-    Plugin 'neomake/neomake'
-    Plugin 'airblade/vim-gitgutter'
-    "Plugin 'hynek/vim-python-pep8-indent'
-    Plugin 'hdima/python-syntax'
-    "Plugin 'klen/python-mode'
-    "Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'dhruvasagar/vim-table-mode'
-    "Plugin 'Valloric/YouCompleteMe'
-    "Plugin 'google/vim-maktaba'
-    "Plugin 'google/vim-codefmt'
-    "Plugin 'google/vim-glaive'
-    "Plugin 'ervandew/snipmate.vim'
-    "Plugin 'davidhalter/jedi-vim'
-    "Plugin 'Lokaltog/vim-easymotion'
-    "Plugin 'mattn/emmet-vim'
-  call vundle#end()
-endif
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-rhubarb'
+"Plug 'tpope/vim-vinegar'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+" better than netrw/vinegar:
+Plug 'jeetsukumaran/vim-filebeagle'
+Plug 'altercation/vim-colors-solarized'
+"Plug 'rking/ag.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ervandew/supertab'
+Plug 'neomake/neomake'
+Plug 'airblade/vim-gitgutter'
+"Plug 'hynek/vim-python-pep8-indent'
+Plug 'hdima/python-syntax'
+"Plug 'klen/python-mode'
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dhruvasagar/vim-table-mode'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'google/vim-maktaba'
+"Plug 'google/vim-codefmt'
+"Plug 'google/vim-glaive'
+"Plug 'ervandew/snipmate.vim'
+"Plug 'davidhalter/jedi-vim'
+"Plug 'Lokaltog/vim-easymotion'
+"Plug 'mattn/emmet-vim'
+call plug#end()
 
 "set number
 "set shell=/bin/bash
@@ -133,9 +126,7 @@ let g:solarized_termcolors=&t_Co
 "let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 let g:solarized_termtrans=1
-if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-  colorscheme solarized
-endif
+silent! colorscheme solarized
 highlight clear SignColumn
 
 "syn match Braces display '[{}()\[\]]'
