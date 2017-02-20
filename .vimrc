@@ -38,6 +38,7 @@ Plug 'dhruvasagar/vim-table-mode'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'Lokaltog/vim-easymotion'
 "Plug 'mattn/emmet-vim'
+Plug 'nathanielc/vim-tickscript'
 call plug#end()
 
 "set number
