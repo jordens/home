@@ -22,6 +22,8 @@
     templatedir = ~/.git_template
 [interactive]
     singlekey = true
+[log]
+    follow = true
 [rebase]
     autosquash = true
 [help]
@@ -36,7 +38,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     co = checkout
     br = branch
-    st = status
+    st = status --short --branch
     di = diff
     ds = diff --stat=160,120
     dc = diff --cached
