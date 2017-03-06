@@ -90,6 +90,7 @@
 /.icedtea
 /.icons
 /.instant
+/.influx_history
 /.ipython
 /.irclogs
 /.jackdrc
@@ -197,6 +198,9 @@ _autosave-
 /.vmware-view-client*
 /.volk
 /.w3m
+/.weechat/logs
+/.weechat/xfer
+/.weechat/sec.conf
 /.wget-hsts
 /.wine
 /.wine64
