@@ -132,6 +132,7 @@ _autosave-
 /.ngspice_history
 /.ngnutmeg_history
 /.odbc.ini
+/.octave_hist
 /.offlineimap
 /.openshot
 /.openfilters
