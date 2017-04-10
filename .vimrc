@@ -39,6 +39,7 @@ Plug 'dhruvasagar/vim-table-mode'
 "Plug 'Lokaltog/vim-easymotion'
 "Plug 'mattn/emmet-vim'
 Plug 'nathanielc/vim-tickscript'
+Plug 'nathangrigg/vim-beancount'
 call plug#end()
 
 "set number
