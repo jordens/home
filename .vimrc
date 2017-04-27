@@ -23,7 +23,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 "Plug 'hynek/vim-python-pep8-indent'
 Plug 'hdima/python-syntax'
@@ -125,7 +125,7 @@ else
   set background=dark
 endif
 let g:solarized_termcolors=&t_Co
-"let g:solarized_contrast="high"
+let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 let g:solarized_termtrans=1
 silent! colorscheme solarized
@@ -137,8 +137,8 @@ highlight clear SignColumn
 " set tags=./.git/tags
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-autocmd! BufWritePost * Neomake
-let g:neomake_python_enabled_makers = ['flake8']
+" autocmd! BufWritePost * Neomake
+" let g:neomake_python_enabled_makers = ['flake8']
 
 let python_highlight_all = 1
 
