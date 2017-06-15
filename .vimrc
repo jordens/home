@@ -134,7 +134,7 @@ augroup ftoptions
   autocmd!
   autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
   autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
-  " autocmd FileType python setlocal omnifunc=python3complete#Complete
+  autocmd FileType python setlocal omnifunc=python3complete#Complete
 augroup END
 
 set splitbelow
@@ -158,7 +158,7 @@ highlight clear SignColumn
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
 
-" set tags=./.git/tags
+set tags=./.git/tags,tags
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " autocmd! BufWritePost * Neomake
