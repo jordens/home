@@ -1,28 +1,43 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
+" sensible editor settings
 Plug 'tpope/vim-sensible'
+" repeat support for plugins
 Plug 'tpope/vim-repeat'
+" Shell commands
 Plug 'tpope/vim-eunuch'
+" [os ]os spell, [<space>, ]<space>, newlines, 
 Plug 'tpope/vim-unimpaired'
+" cs"' change surround " to ', ds" delete, ysiw( add
 Plug 'tpope/vim-surround'
+" git wrappers
 Plug 'tpope/vim-fugitive'
+" Make, Dispatch for tmux
 Plug 'tpope/vim-dispatch'
+" heuristic shiftwidth and expandtab
 Plug 'tpope/vim-sleuth'
+" comment stuff gcc gcap
 Plug 'tpope/vim-commentary'
+" session files
 Plug 'tpope/vim-obsession'
+" github extension
 Plug 'tpope/vim-rhubarb'
-"Plug 'tpope/vim-vinegar'
+" tmux integration
+Plug 'tpope/vim-tbone'
+" netrw tweaks - I . y.
+" but https://github.com/tpope/vim-vinegar/issues/13
+" Plug 'tpope/vim-vinegar'
+" better than netrw/vinegar?
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
-" better than netrw/vinegar:
-Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'altercation/vim-colors-solarized'
 "Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 "Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 "Plug 'hynek/vim-python-pep8-indent'
@@ -143,6 +158,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let python_highlight_all = 1
 
 " autocmd FileType python setlocal omnifunc=python3complete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 let g:racer_cmd = "~/.cargo/bin/racer"
 
