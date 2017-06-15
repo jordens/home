@@ -7,7 +7,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 " Shell commands
 Plug 'tpope/vim-eunuch'
-" [os ]os spell, [<space>, ]<space>, newlines, 
+" [os ]os spell, [<space>, ]<space>, newlines
 Plug 'tpope/vim-unimpaired'
 " cs"' change surround " to ', ds" delete, ysiw( add
 Plug 'tpope/vim-surround'
@@ -99,13 +99,13 @@ set nofoldenable
 
 set nobackup
 set nowritebackup
-set backupdir=~/.vim-tmp,~/tmp,/tmp
-set directory=~/.vim-tmp,~/tmp,/tmp
+set backupdir=~/.vim-tmp//,~/tmp//,/tmp//
+set directory=~/.vim-tmp//,~/tmp//,/tmp//
 
 if !empty($SUDO_USER) && $USER !=# $SUDO_USER
   set viminfo=
-  set directory-=~/.vim-tmp,~/tmp
-  set backupdir-=~/.vim-tmp,~/tmp
+  set directory-=~/.vim-tmp//,~/tmp//
+  set backupdir-=~/.vim-tmp//,~/tmp//
 endif
 
 augroup swapskip
