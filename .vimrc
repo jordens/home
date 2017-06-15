@@ -108,6 +108,8 @@ if !empty($SUDO_USER) && $USER !=# $SUDO_USER
   set backupdir-=~/.vim-tmp//,~/tmp//
 endif
 
+filetype plugin indent on
+
 augroup swapskip
   autocmd!
   silent! autocmd BufNewFile,BufReadPre
@@ -126,6 +128,13 @@ augroup mkdirpre
     \ if !isdirectory(expand("<afile>:p:h")) |
         \ call mkdir(expand("<afile>:p:h"), "p") |
     \ endif
+augroup END
+
+augroup ftoptions
+  autocmd!
+  autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
+  autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
+  " autocmd FileType python setlocal omnifunc=python3complete#Complete
 augroup END
 
 set splitbelow
@@ -156,9 +165,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " let g:neomake_python_enabled_makers = ['flake8']
 
 let python_highlight_all = 1
-
-" autocmd FileType python setlocal omnifunc=python3complete#Complete
-set omnifunc=syntaxcomplete#Complete
 
 let g:racer_cmd = "~/.cargo/bin/racer"
 
