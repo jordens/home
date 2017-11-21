@@ -137,6 +137,11 @@ augroup ftoptions
   autocmd FileType python setlocal omnifunc=python3complete#Complete
 augroup END
 
+augroup glogopen
+  autocmd!
+  autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+
 set splitbelow
 set splitright
 
