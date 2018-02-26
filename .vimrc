@@ -31,9 +31,11 @@ Plug 'tpope/vim-tbone'
 " better than netrw/vinegar?
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'altercation/vim-colors-solarized'
+Plug 'liuchengxu/space-vim-dark'
 "Plug 'rking/ag.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -41,11 +43,12 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 "Plug 'hynek/vim-python-pep8-indent'
-Plug 'hdima/python-syntax'
-"Plug 'klen/python-mode'
+"Plug 'hdima/python-syntax'
+"Plug 'python-mode/python-mode'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dhruvasagar/vim-table-mode'
 "Plug 'Valloric/YouCompleteMe'
+Plug 'prabirshrestha/asyncomplete.vim'
 "Plug 'google/vim-maktaba'
 "Plug 'google/vim-codefmt'
 "Plug 'google/vim-glaive'
@@ -132,9 +135,15 @@ augroup END
 
 augroup ftoptions
   autocmd!
-  autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
-  autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
-  autocmd FileType python setlocal omnifunc=python3complete#Complete
+  "autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
+  "autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
+  "autocmd FileType python setlocal omnifunc=python3complete#Complete
+augroup END
+
+augroup pyfilters
+  autocmd!
+  autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+  autocmd FileType python nnoremap <LocalLeader>i :!isort %<CR><CR>
 augroup END
 
 augroup glogopen
@@ -155,13 +164,19 @@ else
 endif
 let g:solarized_termcolors=&t_Co
 let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
+let g:solarized_visibility="high"
 let g:solarized_termtrans=1
 silent! colorscheme solarized
+"silent! colorscheme space-vim-dark
+"hi Comment    cterm=italic
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
 highlight clear SignColumn
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
+"hi pythonSelf  ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
 
 set tags=./.git/tags,tags
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
