@@ -3,8 +3,8 @@
 [color]
     ui = auto
 [user]
-    name = Robert Jordens
-    email = jordens@gmail.com
+    name = Robert Jördens
+    email = rj@quartiq.de
     signingkey = 4130198A64FEFBAF
 [core]
     excludesfile = ~/.gitignore.global
