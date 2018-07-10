@@ -133,4 +133,8 @@ if ! shopt -oq posix; then
   complete -C aws_completer aws
 fi
 
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
+
 # vim: et ts=4 sw=4
