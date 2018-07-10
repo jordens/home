@@ -1,6 +1,7 @@
 /.asciinema
 /.adobe
 /.android
+/.ansible
 /.anyRemote
 /.AppleDesktop
 /.AppleDouble
@@ -130,6 +131,7 @@ _autosave-
 /.multirust
 /.mysql_history
 /.mw
+/.ncftp
 /.nemiver
 /.netrc
 /.neoman
@@ -254,6 +256,8 @@ _autosave-
 /public_html
 /nextcloud
 /ownCloud
+/mbox
+/sent
 
 /work/*
 !/work/.keep_me
