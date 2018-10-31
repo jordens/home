@@ -138,6 +138,11 @@ augroup ftoptions
   "autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
   "autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
   "autocmd FileType python setlocal omnifunc=python3complete#Complete
+  autocmd FileType markdown
+    \ syn region math start=/\$\$/ end=/\$\$/ |
+    \ syn match math_block '\$[^$].\{-}\$' |
+    \ hi link math Function |
+    \ hi link math_block Function
 augroup END
 
 augroup pyfilters
