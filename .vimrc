@@ -48,7 +48,7 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dhruvasagar/vim-table-mode'
 "Plug 'Valloric/YouCompleteMe'
-Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'prabirshrestha/asyncomplete.vim'
 "Plug 'google/vim-maktaba'
 "Plug 'google/vim-codefmt'
 "Plug 'google/vim-glaive'
@@ -192,6 +192,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let python_highlight_all = 1
 
 let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 1
 
 let g:airline_theme = 'solarized'
 let g:airline#extensions#tabline#enabled = 1
