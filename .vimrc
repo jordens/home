@@ -181,6 +181,7 @@ let g:solarized_termcolors=&t_Co
 let g:solarized_termtrans=1
 "colorscheme solarized
 "colorscheme space-vim-dark
+let g:gruvbox_termcolors=&t_Co
 let g:gruvbox_sign_column="bg0"
 let g:gruvbox_vert_split="gray"
 let g:gruvbox_color_column="bg1"
