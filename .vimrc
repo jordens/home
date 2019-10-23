@@ -61,7 +61,7 @@ Plug 'junegunn/vim-easy-align'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'Lokaltog/vim-easymotion'
 "Plug 'mattn/emmet-vim'
-"Plug 'nathanielc/vim-tickscript'
+Plug 'nathanielc/vim-tickscript'
 Plug 'nathangrigg/vim-beancount'
 call plug#end()
 
