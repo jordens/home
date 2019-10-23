@@ -1,6 +1,8 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " sensible editor settings
 Plug 'tpope/vim-sensible'
 " repeat support for plugins
@@ -14,7 +16,7 @@ Plug 'tpope/vim-surround'
 " git wrappers
 Plug 'tpope/vim-fugitive'
 " Make, Dispatch for tmux
-Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-dispatch'
 " heuristic shiftwidth and expandtab
 Plug 'tpope/vim-sleuth'
 " comment stuff gcc gcap
@@ -22,23 +24,25 @@ Plug 'tpope/vim-commentary'
 " session files
 Plug 'tpope/vim-obsession'
 " github extension
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-rhubarb'
 " tmux integration
 Plug 'tpope/vim-tbone'
 " netrw tweaks - I . y.
 " but https://github.com/tpope/vim-vinegar/issues/13
 " Plug 'tpope/vim-vinegar'
 " better than netrw/vinegar?
+Plug 'scrooloose/nerdcommenter'
+Plug 'sjl/gundo.vim'
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
-Plug 'altercation/vim-colors-solarized'
-Plug 'liuchengxu/space-vim-dark'
-"Plug 'rking/ag.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'altercation/vim-colors-solarized'
+" retro groove colorscheme
+Plug 'morhetz/gruvbox'
+" Plug 'liuchengxu/space-vim-dark'
+" Plug 'rking/ag.vim'
 Plug 'ervandew/supertab'
 "Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
@@ -46,7 +50,8 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'hdima/python-syntax'
 "Plug 'python-mode/python-mode'
 "Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dhruvasagar/vim-table-mode'
+"Plug 'dhruvasagar/vim-table-mode'
+Plug 'junegunn/vim-easy-align'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'prabirshrestha/asyncomplete.vim'
 "Plug 'google/vim-maktaba'
@@ -80,9 +85,11 @@ if v:version + has("patch541") >= 704
   set formatoptions+=j
 endif
 set encoding=utf-8
+set termencoding=utf-8
 set pastetoggle=<f12>
 set shiftround
 set showmatch
+set showcmd
 set smartcase
 set spelllang=en_us
 set whichwrap=<,>,h,l,[,]
@@ -162,22 +169,31 @@ set splitright
 set diffopt+=vertical
 
 "set t_Co=256 " 256 colors
+"set termguicolors
 if has('gui_running')
   set background=light
 else
   set background=dark
 endif
 let g:solarized_termcolors=&t_Co
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
 let g:solarized_termtrans=1
-silent! colorscheme solarized
-"silent! colorscheme space-vim-dark
+"colorscheme solarized
+"colorscheme space-vim-dark
+let g:gruvbox_sign_column="bg0"
+let g:gruvbox_vert_split="gray"
+let g:gruvbox_color_column="bg1"
+let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_italic=1
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_italicize_strings=1
+colorscheme gruvbox
 "hi Comment    cterm=italic
-hi Normal     ctermbg=NONE guibg=NONE
-hi LineNr     ctermbg=NONE guibg=NONE
-hi SignColumn ctermbg=NONE guibg=NONE
-highlight clear SignColumn
+"hi Normal     ctermbg=NONE guibg=NONE
+"hi LineNr     ctermbg=NONE guibg=NONE
+"hi SignColumn ctermbg=NONE guibg=NONE
+"hi clear SignColumn
 
 "syn match Braces display '[{}()\[\]]'
 "hi Braces ctermfg=red
@@ -195,11 +211,30 @@ let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
 
-let g:airline_theme = 'solarized'
+"let g:airline_theme = "solarized"
+let g:airline_theme = "bubblegum"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+"let g:airline_detect_spell=1
+let g:airline_detect_spelllang=0
+"let g:airline_inactive_collapse=1
+
+" ALE
+"let g:ale_sign_error = "✗"
+"let g:ale_sign_warning = "⚠️"
+"
+" gitgutter
+let g:gitgutter_realtime = 0
+
+" use latex for plain .tex files
+let g:tex_flavor='latex'
 
 let mapleader=","
 
@@ -256,6 +291,9 @@ noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>wq :wq<CR>
 noremap <Leader>b :bd<CR>
+
+" Don't show the stupid recent-commands window by accident
+map q: :q
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
