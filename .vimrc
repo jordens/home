@@ -40,7 +40,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 "Plug 'altercation/vim-colors-solarized'
 " retro groove colorscheme
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'rking/ag.vim'
 Plug 'ervandew/supertab'
@@ -189,6 +189,7 @@ let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1
 let g:gruvbox_italicize_comments=1
 let g:gruvbox_italicize_strings=1
+let g:gruvbox_guisp_fallback="bg"
 colorscheme gruvbox
 "hi Comment    cterm=italic
 "hi Normal     ctermbg=NONE guibg=NONE
