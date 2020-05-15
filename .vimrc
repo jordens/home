@@ -37,13 +37,16 @@ Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dense-analysis/ale'
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 "Plug 'altercation/vim-colors-solarized'
 " retro groove colorscheme
 Plug 'gruvbox-community/gruvbox'
 " Plug 'liuchengxu/space-vim-dark'
 " Plug 'rking/ag.vim'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 "Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 "Plug 'hynek/vim-python-pep8-indent'
@@ -53,7 +56,6 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'dhruvasagar/vim-table-mode'
 Plug 'junegunn/vim-easy-align'
 "Plug 'Valloric/YouCompleteMe'
-"Plug 'prabirshrestha/asyncomplete.vim'
 "Plug 'google/vim-maktaba'
 "Plug 'google/vim-codefmt'
 "Plug 'google/vim-glaive'
@@ -163,6 +165,19 @@ augroup glogopen
   autocmd QuickFixCmdPost *grep* cwindow
 augroup END
 
+if executable('rls')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'rls',
+    \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+    \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+    \ 'whitelist': ['rust'],
+    \ })
+endif 
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
 set splitbelow
 set splitright
 
@@ -208,10 +223,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " let g:neomake_python_enabled_makers = ['flake8']
 
 let python_highlight_all = 1
-
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-let g:racer_insert_paren = 1
 
 "let g:airline_theme = "solarized"
 let g:airline_theme = "bubblegum"
