@@ -44,6 +44,9 @@ if which tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
     fi
 fi
 
+# no bell
+setterm -blength 0
+
 HISTCONTROL=ignorespace:ignoredups:erasedups
 HISTSIZE=500000
 HISTFILESIZE=100000
@@ -74,7 +77,7 @@ CDPATH=".:~"
 shopt -s checkwinsize
 
 export HOSTNAME=$(hostname)
-export DEBNAME="Robert Jordens"
+export DEBNAME="Robert Jördens"
 export DEBFULLNAME="Robert Jördens"
 export DEBEMAIL=jordens@gmail.com
 export DEBSIGN_KEYID=4130198A64FEFBAF

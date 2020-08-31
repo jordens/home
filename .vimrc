@@ -104,6 +104,7 @@ set scrolloff=3
 set modeline
 set nojoinspaces
 set clipboard=unnamedplus
+set visualbell
 
 set foldmethod=manual
 set foldnestmax=3
