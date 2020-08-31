@@ -166,7 +166,7 @@ augroup glogopen
   autocmd QuickFixCmdPost *grep* cwindow
 augroup END
 
-if executable('rls')
+if executable('rls____')
   au User lsp_setup call lsp#register_server({
     \ 'name': 'rls',
     \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
