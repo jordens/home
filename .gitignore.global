@@ -46,3 +46,4 @@
 Thumbs.db
 Session.vim
 .ipynb_checkpoints
+.pytest_cache
