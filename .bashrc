@@ -45,7 +45,7 @@ if which tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
 fi
 
 # no bell
-setterm -blength 0
+# setterm -blength 0
 
 HISTCONTROL=ignorespace:ignoredups:erasedups
 HISTSIZE=500000
