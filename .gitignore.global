@@ -48,3 +48,11 @@ Session.vim
 .ipynb_checkpoints
 .pytest_cache
 .gdb_history
+
+*.code-workspace
+.vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
+**/.history
