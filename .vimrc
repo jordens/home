@@ -65,6 +65,7 @@ Plug 'junegunn/vim-easy-align'
 "Plug 'mattn/emmet-vim'
 Plug 'nathanielc/vim-tickscript'
 Plug 'nathangrigg/vim-beancount'
+Plug 'kelwin/vim-smali'
 call plug#end()
 
 "set number
