@@ -258,6 +258,7 @@ _autosave-
 /ownCloud
 /mbox
 /sent
+/texmf
 
 /work/*
 !/work/.keep_me
