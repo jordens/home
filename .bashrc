@@ -1,4 +1,5 @@
 # If not running interactively, don't do anything
+
 case $- in
     *i*) ;;
     *) return ;;
@@ -36,7 +37,13 @@ else
     SESSION_TYPE=local
 fi
 
-if which tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+if which tmux >/dev/null 2>&1 \
+    && [ -z "$TMUX" ] \
+    && [ -z "$VSCODE_IPC_HOOK" ] \
+    && [ -n "$PS1" ] \
+    && [[ ! "$TERM" =~ screen ]] \
+    && [[ ! "$TERM" =~ tmux ]] \
+    && [[ "$TERM_PROGRAM" != "vscode" ]]; then
     if tmux has-session -t $SESSION_TYPE; then # no -PA in old tmux
         exec tmux attach-session -t $SESSION_TYPE
     else
