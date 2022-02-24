@@ -41,9 +41,8 @@ if which tmux >/dev/null 2>&1 \
     && [ -z "$TMUX" ] \
     && [ -z "$VSCODE_IPC_HOOK" ] \
     && [ -n "$PS1" ] \
-    && [[ ! "$TERM" =~ screen ]] \
-    && [[ ! "$TERM" =~ tmux ]] \
     && [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    #&& [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] \
     if tmux has-session -t $SESSION_TYPE; then # no -PA in old tmux
         exec tmux attach-session -t $SESSION_TYPE
     else
