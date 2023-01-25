@@ -131,7 +131,7 @@ fi
 #export GIT_PS1_SHOWUNTRACKEDFILES=1
 #export GIT_PS1_SHOWSTASHSTATE=1
 
-PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(__git_ps1)\[$NORMAL\]\\$ "
+PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(declare -F __git_ps1 &>/dev/null && __git_ps1)\[$NORMAL\]\\$ "
 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
