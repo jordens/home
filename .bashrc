@@ -133,6 +133,10 @@ fi
 
 PS1="\[$BRIGHT_GREEN\]\u@\h\[$NORMAL\]:\[$BRIGHT_BLUE\]\w\[$BRIGHT_VIOLET\]\$(declare -F __git_ps1 &>/dev/null && __git_ps1)\[$NORMAL\]\\$ "
 
+if [ "$TERM_PROGRAM" == "vscode" ]; then
+    source "$(code --locate-shell-integration-path bash)"
+fi
+
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion
