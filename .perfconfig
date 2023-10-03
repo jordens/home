@@ -1,0 +1,8 @@
+[call-graph]
+	record-mode = dwarf
+
+[annotate]
+	disassembler_style = "intel"
+
+[report]
+	hierarchy = true
