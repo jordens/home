@@ -13,4 +13,3 @@ SAVEHIST=100000
 setopt appendhistory autocd beep extendedglob nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
-if [ -e /home/rj/.nix-profile/etc/profile.d/nix.sh ]; then . /home/rj/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
