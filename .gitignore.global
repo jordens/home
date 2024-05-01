@@ -58,3 +58,7 @@ Session.vim
 **/.history
 
 .venv
+
+/perf.data*
+/perf.svg
+/flamegraph.svg
