@@ -28,6 +28,7 @@ for i in ~/.gem/ruby/*/bin; do
     pathprepend "$i"
 done
 pathprepend ~/.cargo/bin
+pathprepend ~/.cargo/env
 
 if [ -n "$SSH_CONNECTION" ] || [ -n "$SSH_TTY" ]; then
     read SSH_CLIENT_IP SSH_CLIENT_PORT SSH_SERVER_IP SSH_SERVER_PORT \
