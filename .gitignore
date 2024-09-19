@@ -237,7 +237,7 @@ _autosave-
 /*.lock
 
 /.ssh/*
-!/.ssh/config.global
+!/.ssh/config
 !/.ssh/authorized_keys_all
 /.gnupg/*
 !/.gnupg/gpg.conf
