@@ -24,7 +24,6 @@
 /.bundle
 /.BRP_PACU
 /.bzr.log*
-/.cargo
 /.cache
 /.ccache
 /.certs
@@ -274,3 +273,5 @@ _autosave-
 !/.vim/tmp/.keep_me
 /scratch/*
 !/scratch/.keep_me
+/.cargo/*
+!/.cargo/config.toml

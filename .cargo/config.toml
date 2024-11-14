@@ -1,3 +1,12 @@
 [expand]
 color = "always"
 pager = true
+
+[alias]
+b = "build"
+br = "build --release"
+c = "check"
+t = "test"
+ta = "test --all --all-features"
+r = "run"
+rr = "run --release"
