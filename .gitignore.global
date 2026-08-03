@@ -62,3 +62,8 @@ Session.vim
 /perf.data*
 /perf.svg
 /flamegraph.svg
+
+AGENTS.md
+PROJECT_MEMORY.md
+*_PROJECT_MEMORY.md
+.codex
