@@ -5,8 +5,7 @@
 *.~?~
 *.orig
 *.rej
-*.pyc
-*.pyo
+*.py[cod]
 
 *.aux
 
@@ -15,6 +14,10 @@
 .hg
 
 *.egg-info/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+.venv/
 
 *.class
 *.dll
